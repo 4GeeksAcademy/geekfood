@@ -1,0 +1,75 @@
+.discover-products-container {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .discover-products-content h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .discover-products-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .discover-products-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .product-features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .feature {
+    max-width: 200px;
+    text-align: center;
+  }
+  
+  .feature img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .feature h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    font-size: 0.9rem;
+  }
+  
+  .discover-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .explore-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .register-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
