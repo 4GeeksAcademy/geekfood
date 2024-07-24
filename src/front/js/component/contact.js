@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Contact = () => {
+export const Contact = () => {
   return (
     <div className="container text-center my-5">
       <h2>¡Contáctanos!</h2>
@@ -9,13 +9,13 @@ const Contact = () => {
         <div className="col-md-4">
           <i className="bi bi-envelope-fill" style={{ fontSize: '2rem' }}></i>
           <h5 className="mt-3">Email</h5>
-          <p>Estamos aquí para ayudarte. Escríbenos al siguiente correo electronico</p>
+          <p>Estamos aquí para ayudarte. Escríbenos al siguiente correo electrónico</p>
           <a href="mailto:hello@relume.io">hello@relume.io</a>
         </div>
         <div className="col-md-4">
           <i className="bi bi-telephone-fill" style={{ fontSize: '2rem' }}></i>
           <h5 className="mt-3">Teléfono</h5>
-          <p>Contactanos al siguiente numero telfonico</p>
+          <p>Contáctanos al siguiente número telefónico</p>
           <a href="tel:+1555000000">+1 (555) 000-0000</a>
         </div>
         <div className="col-md-4">
@@ -28,5 +28,3 @@ const Contact = () => {
     </div>
   );
 };
-
-export default Contact;
