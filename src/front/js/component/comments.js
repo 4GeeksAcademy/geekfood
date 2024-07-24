@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-function Comentarios() {
+export const Comentarios = () => {
     const [commentText, setCommentText] = useState("");
     const [comentarios, setComentarios] = useState([]);
 
@@ -69,4 +69,3 @@ function Comentarios() {
     );
 }
 
-export default Comentarios;
