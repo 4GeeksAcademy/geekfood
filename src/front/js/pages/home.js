@@ -8,6 +8,7 @@ import { Newsletter } from "../component/newsletter";
 import { DownloadApp } from "../component/DownloadApp";
 import { DiscoverProducts } from "../component/DiscoverProducts";
 
+import { Contact } from "../component/contact";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -18,6 +19,7 @@ export const Home = () => {
 			<DiscoverProducts />
 			<DownloadApp />
 			<Newsletter />
+			<Contact />
 		</>
 
 	);
