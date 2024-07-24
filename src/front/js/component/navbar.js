@@ -43,6 +43,9 @@ export const Navbar = () => {
 						<li className="nav-item">
 							<Link className="nav-link active" aria-current="page" to="/">Preguntas Frecuentes</Link>
 						</li>
+						<li className="nav-item">
+							<Link className="nav-link active" aria-current="page" to="/"><i className="bi bi-cart"></i>(0)</Link>
+						</li>
 					</ul>
 					<div className="d-flex me-2">
 						<Link className="btn btn-secondary btn-sm" to="/registro">Registrate</Link>
