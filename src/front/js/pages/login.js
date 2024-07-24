@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const Login = () => {
 	return (
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
 			<div class="container-fluid">
