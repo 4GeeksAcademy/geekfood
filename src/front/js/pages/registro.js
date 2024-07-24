@@ -1,52 +1,83 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import imgLogin from "../../img/img-login.png";
 
 export const Registro = () => {
 	return (
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="/">Logo</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="/">Inicio</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Nosotros</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Servicios</a>
-						</li>
-
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Productos
-							</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Americana</a></li>
-								<li><a class="dropdown-item" href="#">China</a></li>
-								<li><a class="dropdown-item" href="#">Coreana</a></li>
-								<li><a class="dropdown-item" href="#">Española</a></li>
-								<li><a class="dropdown-item" href="#">India</a></li>
-								<li><a class="dropdown-item" href="#">Italiana</a></li>
-								<li><a class="dropdown-item" href="#">Japonesa</a></li>
-								<li><a class="dropdown-item" href="#">Mexicana</a></li>
-							</ul>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Contactanos</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Preguntas Frecuentes</a>
-						</li>
-					</ul>
-					<button class="btn btn-outline-primary" type="submit">Ingresar</button>
-					<button class="btn btn-outline-primary" type="submit">Registrate</button>
+		<div className="container-fluid p-0 mb-1">
+			<div className="row no-gutters">
+				{/* Formulario de Registro */}
+				<div className="form-login col-md-6 d-flex align-items-center justify-content-center">
+					<form className="w-75">
+						<h3 className="text-center mb-4">Registrate</h3>
+						<p className="text-center mb-4">Bienvenido a nuestro portal para obtener una nueva cuenta</p>
+						<div className="mb-3">
+							<label htmlFor="exampleInputEmail1" className="form-label">Nombres</label>
+							<input type="email" className="form-control" id="exampleInputName1" aria-describedby="emailHelp" />
+							<div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+						</div>
+						<div className="mb-3">
+							<label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+							<input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+							<div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+						</div>
+						<div className="mb-3">
+							<label htmlFor="exampleInputPassword1" className="form-label">Password <a href="">Olvidaste tu contraseña?</a></label>
+							<input type="password" className="form-control" id="exampleInputPassword1" />
+						</div>
+						<div className="mb-3">
+							<button type="submit" className="btn btn-secondary w-100">Registrarse</button>
+						</div>
+						<div className="mb-3">
+							<button type="submit" className="btn btn-secondary w-100">Registrate con Google</button>
+						</div>
+						<div className="text-center">
+							<a href="">¿Ya tienes una cuenta? Inicia sesión aquí!</a>
+						</div>
+					</form>
+				</div>
+				{/* Imagen */}
+				<div className="img-login col-md-6 d-flex align-items-center justify-content-center">
+					<div id="carouselExampleDark" className="carousel carousel-dark slide">
+						<div className="carousel-indicators">
+							<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						</div>
+						<div className="carousel-inner">
+							<div className="carousel-item active" data-bs-interval="1000">
+								<div className="carousel-caption d-none d-md-block">
+									<h5>First slide label</h5>
+									<p>Some representative placeholder content for the first slide.</p>
+								</div>
+								<img src={imgLogin} className="d-block w-100" alt="..." />
+							</div>
+							<div className="carousel-item" data-bs-interval="1000">
+								<div className="carousel-caption d-none d-md-block">
+									<h5>Second slide label</h5>
+									<p>Some representative placeholder content for the second slide.</p>
+								</div>
+								<img src={imgLogin} className="d-block w-100" alt="..." />
+							</div>
+							<div className="carousel-item">
+								<div className="carousel-caption d-none d-md-block">
+									<h5>Third slide label</h5>
+									<p>Some representative placeholder content for the third slide.</p>
+								</div>
+								<img src={imgLogin} className="d-block w-100" alt="..." />
+							</div>
+						</div>
+						<button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+							<span className="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span className="visually-hidden">Previous</span>
+						</button>
+						<button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+							<span className="carousel-control-next-icon" aria-hidden="true"></span>
+							<span className="visually-hidden">Next</span>
+						</button>
+					</div>
 				</div>
 			</div>
-		</nav>
+		</div>
 	);
 };
