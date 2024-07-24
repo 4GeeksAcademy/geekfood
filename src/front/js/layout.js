@@ -14,6 +14,7 @@ import { Login } from "./pages/login";
 import { Registro } from "./pages/registro";
 import { NotFound } from "./pages/notfound";
 
+
 //create your first component
 const Layout = () => {
     //the basename is used when your project is published in a subdirectory and not in the root of the domain
