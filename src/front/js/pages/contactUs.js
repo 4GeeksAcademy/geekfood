@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../styles/contactUs.css";
 
 function ContactUs() {
@@ -26,9 +25,9 @@ function ContactUs() {
       <div className="right-side p-5">
         <h1>Contáctanos</h1>
         <p>Soporte al cliente siempre disponible.</p>
-        <form 
-          noValidate 
-          className={validated ? 'was-validated' : ''} 
+        <form
+          noValidate
+          className={validated ? 'was-validated' : ''}
           onSubmit={handleSubmit}
         >
           <div className="mb-3">
