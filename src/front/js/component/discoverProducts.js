@@ -1,5 +1,5 @@
 import React from 'react';
-import './DiscoverProducts.css';
+import "../../styles/discoverProducts.css";
 
 export const DiscoverProducts = () => {
     return (
@@ -41,4 +41,3 @@ export const DiscoverProducts = () => {
     );
 };
 
-export default DiscoverProducts;

@@ -1,5 +1,5 @@
 import React from "react";
-import './newsletter.css';
+import "../../styles/newsletter.css";
 
 export const Newsletter = () => {
   return (
@@ -19,5 +19,4 @@ export const Newsletter = () => {
   );
 };
 
-export default Newsletter;
 
