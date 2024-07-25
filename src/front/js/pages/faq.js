@@ -32,6 +32,7 @@ const Faq = () => {
   };
 
   const data = faqData();
+  
 
   return (
     <div className="faq-container">
