@@ -13,7 +13,7 @@ import { Footer } from "./component/footer";
 import { Login } from "./pages/login";
 import { Registro } from "./pages/registro";
 import { NotFound } from "./pages/notfound";
-
+import { Category } from "./pages/category";
 
 
 
@@ -37,6 +37,7 @@ const Layout = () => {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<NotFound />} path="*" />
+
                     </Routes>
                     <Footer />
                 </ScrollToTop>
