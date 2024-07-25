@@ -7,6 +7,7 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import Faq from "./pages/faq";
+import ContactUs from "./pages/contactUs";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -38,6 +39,7 @@ const Layout = () => {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Faq />} path="/faq" />
+                        <Route element={<ContactUs />} path="/contactUs" />
                         <Route element={<NotFound />} path="*" />
                     </Routes>
                     <Footer />
