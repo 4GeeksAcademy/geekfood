@@ -16,7 +16,7 @@ export const DiscoverProducts = () => {
                         <h4>Americana</h4>
                         <p>Amplia variedad de comida Americana para satisfacer todos los antojos y gustos</p>
                         <button className="explore-button" href="/product.js">Explorar</button>
-                        
+
                     </div>
 
                     <div className="feature">

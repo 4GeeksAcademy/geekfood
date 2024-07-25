@@ -3,7 +3,7 @@ import "../../styles/downloadApp.css";
 
 export const DownloadApp = () => {
   return (
-    
+
     <div className="download-app-container">
       <div className="download-app-content">
         <h2>Descarga nuestra app ahora</h2>
@@ -20,4 +20,3 @@ export const DownloadApp = () => {
   );
 };
 
-export default DownloadApp;
