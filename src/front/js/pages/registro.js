@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import imgLogin from "../../img/img-login.png";
+import imgLogin from "../../img/login.png";
 
 export const Registro = () => {
 	return (
