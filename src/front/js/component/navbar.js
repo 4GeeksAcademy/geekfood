@@ -41,6 +41,9 @@ export const Navbar = () => {
 							<Link className="nav-link active" aria-current="page" to="/">Contactanos</Link>
 						</li>
 						<li className="nav-item">
+							<Link className="nav-link active" aria-current="page" to="/productDetail">Detalle</Link>
+						</li>
+						<li className="nav-item">
 							<Link className="nav-link active" aria-current="page" to="/">Preguntas Frecuentes</Link>
 						</li>
 						<li className="nav-item">
