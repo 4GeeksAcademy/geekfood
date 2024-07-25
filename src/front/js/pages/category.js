@@ -16,7 +16,8 @@ export const Product = () => {
     return (
         <div className="products-container">
             <div className="products-header">
-                <h2>Nuestros platos</h2>
+                <h3>Tagline</h3>
+                <h2>Products</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
             </div>
@@ -37,3 +38,4 @@ export const Product = () => {
     );
 };
 
+export default Product;

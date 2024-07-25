@@ -15,6 +15,11 @@ import { Footer } from "./component/footer";
 import { Login } from "./pages/login";
 import { Registro } from "./pages/registro";
 import { NotFound } from "./pages/notfound";
+import { Category } from "./pages/category";
+
+
+
+//create your first component
 import { Contact } from "./component/contact";
 import { Product } from "./component/product";
 import { ProductDetail } from "./pages/productDetail";
@@ -41,6 +46,7 @@ const Layout = () => {
                         <Route element={<Faq />} path="/faq" />
                         <Route element={<ContactUs />} path="/contactUs" />
                         <Route element={<NotFound />} path="*" />
+
                     </Routes>
                     <Footer />
                 </ScrollToTop>
