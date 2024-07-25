@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import imgLogin from "../../img/img-login.png";
 
 export const Login = () => {

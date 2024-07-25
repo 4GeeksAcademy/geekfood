@@ -41,4 +41,3 @@ export const DiscoverProducts = () => {
     );
 };
 
-export default DiscoverProducts;
