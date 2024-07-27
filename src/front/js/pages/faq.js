@@ -62,7 +62,7 @@ const Faq = () => {
       <div className="contact-section">
         <h2>¿Todavía tienes preguntas?</h2>
         <p>Contáctanos para obtener más información.</p>
-        <button>Contacto</button>
+        <button className="btn btn-secondary">Contacto</button>
       </div>
     </div>
   );

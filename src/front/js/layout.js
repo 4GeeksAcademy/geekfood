@@ -17,12 +17,10 @@ import { Registro } from "./pages/registro";
 import { NotFound } from "./pages/notfound";
 import { Category } from "./pages/category";
 
-
-
-//create your first component
 import { Contact } from "./component/contact";
 import { Product } from "./component/product";
 import { ProductDetail } from "./pages/productDetail";
+import { FPassword } from "./pages/fpassword";
 
 const Layout = () => {
     const basename = process.env.BASENAME || "";
@@ -37,6 +35,7 @@ const Layout = () => {
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Login />} path="/login" />
+                        <Route element={<FPassword />} path="/resetPassword" />
                         <Route element={<Registro />} path="/registro" />
                         <Route element={<Contact />} path="#contact" />
                         <Route element={<Product />} path="/product" />
@@ -46,7 +45,6 @@ const Layout = () => {
                         <Route element={<Faq />} path="/faq" />
                         <Route element={<ContactUs />} path="/contactUs" />
                         <Route element={<NotFound />} path="*" />
-
                     </Routes>
                     <Footer />
                 </ScrollToTop>

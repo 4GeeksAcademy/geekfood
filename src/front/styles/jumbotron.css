@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-family: "Rakkas", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fd8d14;
+}
+
+p {
+    font-family: "Nunito", serif;
+    font-weight: 200;
+    font-style: normal;
+    color: #000000;
+}
+
+.container {
+    margin: 40px;
+}
+
+.jumbotron {
+    border: 1px solid #c9c9c954;
+}
+
+.btn {
+    background-color: #fd8d14;
+    color: #000000;
+    border: #ffffff;
+    font-family: "Nunito", serif;
+    font-weight: 300;
+    font-style: normal;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
