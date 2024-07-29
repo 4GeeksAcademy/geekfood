@@ -6,7 +6,7 @@
   }
   
   .faq-container h1 {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 10px;
   }
   
@@ -29,11 +29,12 @@
     align-items: center;
     cursor: pointer;
     font-weight: bold;
+    font-size: 17px;
   }
   
   .faq-answer {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .contact-section {

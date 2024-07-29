@@ -9,6 +9,7 @@ import { Single } from "./pages/single";
 import Faq from "./pages/faq";
 import Product_americano from "./pages/product_americano";
 import ContactUs from "./pages/contactUs";
+import UserProfile from "./pages/userProfile";
 import injectContext from "./store/appContext";
 import DiscoverProducts from "./pages/discoverProducts";
 
@@ -49,6 +50,7 @@ const Layout = () => {
                         <Route element={<Faq />} path="/faq" />
                         <Route element={<Product_americano />} path="/product_americano" />
                         <Route element={<ContactUs />} path="/contactUs" />
+                        <Route element={<UserProfile />} path="/userProfile" />
                         <Route element={<NotFound />} path="*" />
                         <Route element={<DiscoverProducts />} path="/discoverProduct" />
 

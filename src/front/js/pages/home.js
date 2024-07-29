@@ -7,6 +7,7 @@ import { DiscoverProducts } from "../component/discoverProducts";
 
 import { Contact } from "../component/contact";
 import { Comentarios } from "../component/comments";
+import { Whyus } from "../component/whyus";
 
 export const Home = () => {
 
@@ -18,6 +19,8 @@ export const Home = () => {
 			<Newsletter />
 			<Contact />
 			<Comentarios />
+			<Whyus />
+			<Product />
 		</>
 
 	);

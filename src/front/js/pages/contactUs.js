@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "../../styles/contactUs.css";
+import imagen from "../../img/takeout.jpg";
 
 function ContactUs() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -21,7 +22,9 @@ function ContactUs() {
 
   return (
     <div className="d-flex vh-100">
-      <div className="left-side"></div>
+      <div className="left-side">
+        <img src={imagen} className="d-block w-100 h-100" alt="..." />
+      </div>
       <div className="right-side p-5">
         <h1>Contáctanos</h1>
         <p>Soporte al cliente siempre disponible.</p>
