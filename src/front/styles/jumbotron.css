@@ -1,7 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-}
 
 .card-img {
     width: 100%;
@@ -24,10 +20,13 @@ p {
 
 .container {
     margin: 40px;
+
 }
 
 .jumbotron {
     border: 1px solid #c9c9c954;
+    background-color: rgba(255, 201, 135, 0.564);
+
 }
 
 .btn {

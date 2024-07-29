@@ -6,7 +6,7 @@ import '../../styles/whyus.css'
 
 export const Whyus = () => {
     return (
-        <div className="container mt-5">
+        <div className="wu-container py-5 my-5">
             <div className="text-center mb-4">
                 <h2>¿Por qué escogernos?</h2>
                 <p>Nuestra característica principal es la rapidez de entrega. Obtén tus alimentos favoritos en tiempo récord y disfruta de una experiencia sin igual.</p>
@@ -66,7 +66,7 @@ export const Whyus = () => {
                         <p>Soporte dedicado para resolver cualquier problema</p>
                     </div>
                 </div>
-                <div className="col-md-4 mb-12">
+                <div className="col-md-4 mb-4 mx-auto">
                     <div className="text-center">
                         <div className="iconn mb-3">
                             <FontAwesomeIcon icon={faComments} size="3x" />
