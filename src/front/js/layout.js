@@ -7,15 +7,17 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import Faq from "./pages/faq";
+import Product_americano from "./pages/product_americano";
 import ContactUs from "./pages/contactUs";
 import injectContext from "./store/appContext";
+import DiscoverProducts from "./pages/discoverProducts";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Login } from "./pages/login";
 import { Registro } from "./pages/registro";
 import { NotFound } from "./pages/notfound";
-import { Category } from "./pages/category";
+
 
 
 
@@ -23,6 +25,7 @@ import { Category } from "./pages/category";
 import { Contact } from "./component/contact";
 import { Product } from "./component/product";
 import { ProductDetail } from "./pages/productDetail";
+
 
 const Layout = () => {
     const basename = process.env.BASENAME || "";
@@ -44,8 +47,10 @@ const Layout = () => {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Faq />} path="/faq" />
+                        <Route element={<Product_americano />} path="/product_americano" />
                         <Route element={<ContactUs />} path="/contactUs" />
                         <Route element={<NotFound />} path="*" />
+                        <Route element={<DiscoverProducts />} path="/discoverProduct" />
 
                     </Routes>
                     <Footer />
