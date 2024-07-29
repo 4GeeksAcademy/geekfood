@@ -72,10 +72,36 @@
 
   .faq-container h1 {
     font-size: 20px;
+    font-size: 30px;
+    margin-bottom: 10px;
   }
 
   .faq-container p {
     font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .faq-list {
+    border-top: 1px solid #ddd;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  
+  .faq-answer {
+    margin-top: 10px;
+    font-size: 16px;
   }
 
   .faq-question {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../../styles/faq.css";
-
 
 export const faqData = () => [
   {
@@ -35,9 +35,14 @@ export const faqData = () => [
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const navigate = useNavigate();
 
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const handleContactClick = () => {
+    navigate('/contactUs');
   };
 
   const data = faqData();
@@ -63,6 +68,7 @@ const Faq = () => {
         <h2>¿Todavía tienes preguntas?</h2>
         <p>Contáctanos para obtener más información.</p>
         <button className="btn btn-secondary">Contacto</button>
+        <button onClick={handleContactClick}>Contacto</button>
       </div>
     </div>
   );
