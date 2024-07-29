@@ -10,7 +10,7 @@ export const Footer = () => (
           <p>Únete a nuestro boletín para mantenerte al día de las características y lanzamientos.</p>
           <form className="newsletter-form">
             <input type="email" placeholder="Ingresa tu correo electrónico" />
-            <button type="submit">Suscribirse</button>
+            <button type="submit" href="/suscription">Suscribirse</button>
           </form>
           <small>
             Al suscribirte, aceptas nuestra Política de Privacidad y das tu consentimiento para recibir actualizaciones de nuestra empresa.

@@ -16,7 +16,7 @@ import { Login } from "./pages/login";
 import { Registro } from "./pages/registro";
 import { NotFound } from "./pages/notfound";
 import { Category } from "./pages/category";
-
+import { Suscription } from "./pages/suscription";
 
 
 //create your first component
@@ -46,6 +46,7 @@ const Layout = () => {
                         <Route element={<Faq />} path="/faq" />
                         <Route element={<ContactUs />} path="/contactUs" />
                         <Route element={<NotFound />} path="*" />
+                        <Route element={<Suscription />} path="/suscription" />
 
                     </Routes>
                     <Footer />
