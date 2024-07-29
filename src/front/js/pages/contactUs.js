@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../../styles/contactUs.css";
-import imagen from "../../img/takeout.jpg";
+import imagen from "../../img/contact.png";
 
 function ContactUs() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -75,7 +75,7 @@ function ContactUs() {
               Por favor ingrese su mensaje.
             </div>
           </div>
-          <button type="submit" className="btn btn-dark">Enviar</button>
+          <button type="submit" className="btn btn-secondary w-100">Enviar</button>
         </form>
       </div>
     </div>

@@ -3,7 +3,7 @@ import "../../styles/newsletter.css";
 
 export const Newsletter = () => {
   return (
-    <div className="newsletter-container">
+    <div className="newsletter-container py-5 my-5">
       <div className="newsletter-content">
         <h2>Suscríbete para recibir ofertas exclusivas</h2>
         <p>Recibe ofertas y novedades directamente en tu correo</p>
