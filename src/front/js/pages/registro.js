@@ -1,5 +1,5 @@
 import React from "react";
-import imgLogin from "../../img/login.png";
+import imgLogin from "../../img/register.png";
 import "../../styles/login.css";
 
 export const Registro = () => {
@@ -17,24 +17,24 @@ export const Registro = () => {
 						</div>
 						<div className="carousel-inner">
 							<div className="carousel-item active" data-bs-interval="1000">
-								<div className="carousel-caption d-none d-md-block">
+								{/* <div className="carousel-caption d-none d-md-block">
 									<h5>First slide label</h5>
 									<p>Some representative placeholder content for the first slide.</p>
-								</div>
+								</div> */}
 								<img src={imgLogin} className="d-block w-100" alt="..." />
 							</div>
 							<div className="carousel-item" data-bs-interval="1000">
-								<div className="carousel-caption d-none d-md-block">
+								{/* <div className="carousel-caption d-none d-md-block">
 									<h5>Second slide label</h5>
 									<p>Some representative placeholder content for the second slide.</p>
-								</div>
+								</div> */}
 								<img src={imgLogin} className="d-block w-100" alt="..." />
 							</div>
 							<div className="carousel-item">
-								<div className="carousel-caption d-none d-md-block">
+								{/* <div className="carousel-caption d-none d-md-block">
 									<h5>Third slide label</h5>
 									<p>Some representative placeholder content for the third slide.</p>
-								</div>
+								</div> */}
 								<img src={imgLogin} className="d-block w-100" alt="..." />
 							</div>
 						</div>
