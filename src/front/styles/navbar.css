@@ -1,0 +1,51 @@
+.navbar {
+    background-color: #fefefe;
+    font-family: "Nunito", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar-icon {
+    height: 60px;
+    width: 100px;
+}
+
+.navbar .nav-link {
+    color: #000000;
+}
+
+.navbar .nav-link.active {
+    color: #000000;
+}
+
+.navbar .nav-link:hover {
+    color: #fd8d14;
+}
+
+.navbar .dropdown-menu {
+    background-color: #fefefe;
+}
+
+.navbar .dropdown-item {
+    color: #000000;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #fd8d14;
+    color: #ffffff;
+}
+
+.navbar .btn {
+    background-color: #fd8d14;
+    color: #000000;
+    border: #ffffff;
+    font-family: "Nunito", serif;
+    font-weight: 300;
+    font-style: normal;
+    border-radius: 4px;
+}
+
+.navbar .btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}

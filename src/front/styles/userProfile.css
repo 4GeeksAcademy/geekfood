@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.user-profile-container {
+    display: flex;
+    height: calc(100vh - 60px); /* Ajuste para tener en cuenta el espacio superior e inferior */
+    padding: 30px 20px; /* Espacio superior e inferior */
+    box-sizing: border-box;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    width: 250px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.profile {
+    margin-bottom: 30px;
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.saved-methods,
+.new-method {
+    width: 50%; /* Reducir el tamaño de las cajas al 50% del ancho original */
+    margin-bottom: 10px; /* Añadir margen inferior para la separación */
+}
+
+.saved-method {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px; /* Reducir el espacio entre los elementos */
+}
+
+.saved-method i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.card-number {
+    font-weight: bold;
+}
+
+.new-method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-method h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.new-method .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.new-method .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.new-method .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.new-method .btn:hover {
+    background-color: #0056b3;
+}
+
+.divider {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}

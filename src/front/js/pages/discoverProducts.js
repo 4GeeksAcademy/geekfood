@@ -1,5 +1,5 @@
-import React from 'react';
-import "../../styles/discoverProducts.css";
+import React, { useState } from 'react';
+import "../../styles/product.css";
 import imgComidaAmericana from '../../img/comida_americana.png';
 import imgComidaChina from '../../img/comida_china.png';
 import imgComidaKoreana from '../../img/comida_koreana.png';
@@ -21,40 +21,56 @@ export const DiscoverProducts = () => {
                     <div className="feature">
                         <img src={imgComidaAmericana} alt="Americana" />
                         <h4>Americana</h4>
+
+
                     </div>
                     <div className="feature">
                         <img src={imgComidaChina} alt="China" />
                         <h4>China</h4>
+
+
                     </div>
                     <div className="feature">
                         <img src={imgComidaKoreana} alt="Coreana" />
                         <h4>Coreana</h4>
+
+
                     </div>
                     <div className="feature">
                         <img src={imgComidaEspañola} alt="Española" />
                         <h4>Española</h4>
+
+
                     </div>
                     <div className="feature">
                         <img src={imgComidaIndia} alt="India" />
                         <h4>India</h4>
+
+
                     </div>
                     <div className="feature">
                         <img src={imgComidaItaliana} alt="Italiana" />
                         <h4>Italiana</h4>
+
+
                     </div>
                     <div className="feature">
                         <img src={imgComidaJaponesa} alt="Japonesa" />
                         <h4>Japonesa</h4>
+
+
                     </div>
                     <div className="feature">
                         <img src={imgComidaMexicana} alt="Mexicana" />
                         <h4>Mexicana</h4>
+
+
                     </div>
                 </div>
-                <button className="view-product-button" onClick={() => navigate('/')}>Revisa aca nuestros deliciosos platos</button>
             </div>
         </div>
     );
 };
 
+export default DiscoverProducts;
 

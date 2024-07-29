@@ -21,7 +21,7 @@ export const Home = () => {
 			<Contact />
 			<Comentarios />
 			<Whyus />
-			<Product />
+
 		</>
 
 	);

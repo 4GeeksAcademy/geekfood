@@ -1,5 +1,7 @@
 import React from "react";
-import imgLogin from "../../img/img-login.png";
+import imgLogin from "../../img/login.png";
+import "../../styles/login.css";
+
 
 export const Login = () => {
 	return (
@@ -16,8 +18,9 @@ export const Login = () => {
 							<div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
 						</div>
 						<div className="mb-3">
-							<label htmlFor="exampleInputPassword1" className="form-label">Password <a href="">Olvidaste tu contraseña?</a></label>
+							<label htmlFor="exampleInputPassword1" className="form-label">Password <a className="text" href="/resetPassword">Olvidaste tu contraseña?</a></label>
 							<input type="password" className="form-control" id="exampleInputPassword1" />
+							<div id="emailHelp" className="form-text">We'll never share your password with anyone else.</div>
 						</div>
 						<div className="mb-3">
 							<button type="submit" className="btn btn-secondary w-100" href="/login">Acceder</button>
@@ -26,7 +29,7 @@ export const Login = () => {
 							<button type="submit" className="btn btn-secondary w-100" href="/registro">Accede con Google</button>
 						</div>
 						<div className="text-center">
-							<a href="">¿No tienes una cuenta? ¡Regístrate aquí!</a>
+							<a className="text" href="/registro">¿No tienes una cuenta? ¡Regístrate aquí!</a>
 						</div>
 					</form>
 				</div>

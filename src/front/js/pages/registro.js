@@ -1,40 +1,12 @@
 import React from "react";
-import imgLogin from "../../img/login.png";
+import imgLogin from "../../img/register.png";
+import "../../styles/login.css";
 
 export const Registro = () => {
 	return (
 		<div className="container-fluid p-0 mb-1">
 			<div className="row no-gutters">
-				{/* Formulario de Registro */}
-				<div className="form-login col-md-6 d-flex align-items-center justify-content-center">
-					<form className="w-75">
-						<h3 className="text-center mb-4">Registrate</h3>
-						<p className="text-center mb-4">Bienvenido a nuestro portal para obtener una nueva cuenta</p>
-						<div className="mb-3">
-							<label htmlFor="exampleInputEmail1" className="form-label">Nombres</label>
-							<input type="email" className="form-control" id="exampleInputName1" aria-describedby="emailHelp" />
-							<div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-						</div>
-						<div className="mb-3">
-							<label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-							<input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-							<div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-						</div>
-						<div className="mb-3">
-							<label htmlFor="exampleInputPassword1" className="form-label">Password <a href="">Olvidaste tu contraseña?</a></label>
-							<input type="password" className="form-control" id="exampleInputPassword1" />
-						</div>
-						<div className="mb-3">
-							<button type="submit" className="btn btn-secondary w-100">Registrarse</button>
-						</div>
-						<div className="mb-3">
-							<button type="submit" className="btn btn-secondary w-100">Registrate con Google</button>
-						</div>
-						<div className="text-center">
-							<a href="">¿Ya tienes una cuenta? Inicia sesión aquí!</a>
-						</div>
-					</form>
-				</div>
+
 				{/* Imagen */}
 				<div className="img-login col-md-6 d-flex align-items-center justify-content-center">
 					<div id="carouselExampleDark" className="carousel carousel-dark slide">
@@ -45,24 +17,24 @@ export const Registro = () => {
 						</div>
 						<div className="carousel-inner">
 							<div className="carousel-item active" data-bs-interval="1000">
-								<div className="carousel-caption d-none d-md-block">
+								{/* <div className="carousel-caption d-none d-md-block">
 									<h5>First slide label</h5>
 									<p>Some representative placeholder content for the first slide.</p>
-								</div>
+								</div> */}
 								<img src={imgLogin} className="d-block w-100" alt="..." />
 							</div>
 							<div className="carousel-item" data-bs-interval="1000">
-								<div className="carousel-caption d-none d-md-block">
+								{/* <div className="carousel-caption d-none d-md-block">
 									<h5>Second slide label</h5>
 									<p>Some representative placeholder content for the second slide.</p>
-								</div>
+								</div> */}
 								<img src={imgLogin} className="d-block w-100" alt="..." />
 							</div>
 							<div className="carousel-item">
-								<div className="carousel-caption d-none d-md-block">
+								{/* <div className="carousel-caption d-none d-md-block">
 									<h5>Third slide label</h5>
 									<p>Some representative placeholder content for the third slide.</p>
-								</div>
+								</div> */}
 								<img src={imgLogin} className="d-block w-100" alt="..." />
 							</div>
 						</div>
@@ -75,6 +47,36 @@ export const Registro = () => {
 							<span className="visually-hidden">Next</span>
 						</button>
 					</div>
+				</div>
+				{/* Formulario de Registro */}
+				<div className="form-login col-md-6 d-flex align-items-center justify-content-center">
+					<form className="w-75">
+						<h3 className="text-center mb-4">Registrate</h3>
+						<p className="text-center mb-4">Bienvenido a nuestro portal para obtener una nueva cuenta</p>
+						<div className="mb-3">
+							<label htmlFor="exampleInputEmail1" className="form-label">Nombres</label>
+							<input type="email" className="form-control" id="exampleInputName1" aria-describedby="emailHelp" />
+						</div>
+						<div className="mb-3">
+							<label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+							<input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+							<div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+						</div>
+						<div className="mb-3">
+							<label htmlFor="exampleInputPassword1" className="form-label">Password <a className="text" href="/resetPassword">Olvidaste tu contraseña?</a></label>
+							<input type="password" className="form-control" id="exampleInputPassword1" />
+							<div id="emailHelp" className="form-text">We'll never share your password with anyone else.</div>
+						</div>
+						<div className="mb-3">
+							<button type="submit" className="btn btn-secondary w-100">Registrarse</button>
+						</div>
+						<div className="mb-3">
+							<button type="submit" className="btn btn-secondary w-100">Registrate con Google</button>
+						</div>
+						<div className="text-center">
+							<a className="text" href="/login">¿Ya tienes una cuenta? Inicia sesión aquí!</a>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
