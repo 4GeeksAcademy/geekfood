@@ -9,6 +9,7 @@ import { Contact } from "../component/contact";
 import { Comentarios } from "../component/comments";
 import { Whyus } from "../component/whyus";
 
+
 export const Home = () => {
 
 	return (

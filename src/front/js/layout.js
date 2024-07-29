@@ -18,6 +18,8 @@ import { Footer } from "./component/footer";
 import { Login } from "./pages/login";
 import { Registro } from "./pages/registro";
 import { NotFound } from "./pages/notfound";
+import { Category } from "./pages/category";
+import { Suscription } from "./pages/suscription";
 
 
 import { Contact } from "./component/contact";
@@ -51,6 +53,7 @@ const Layout = () => {
                         <Route element={<ContactUs />} path="/contactUs" />
                         <Route element={<UserProfile />} path="/userProfile" />
                         <Route element={<NotFound />} path="*" />
+                        <Route element={<Suscription />} path="/suscription" />
                         <Route element={<DiscoverProducts />} path="/discoverProduct" />
 
                     </Routes>
