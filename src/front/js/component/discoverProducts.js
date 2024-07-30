@@ -11,7 +11,7 @@ import imgComidaMexicana from '../../img/comida_mexicana.png';
 
 export const DiscoverProducts = () => {
     return (
-        <div className="discover-products-container">
+        <div className="discover-products-container py-5 my-5">
             <div className="discover-products-content">
                 <h2>Descubre nuestra amplia variedad de platos</h2>
                 <p>

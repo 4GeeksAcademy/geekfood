@@ -1,20 +1,18 @@
 import React from 'react';
 import "../../styles/downloadApp.css";
+import download from "../../img/download.png"
 
 export const DownloadApp = () => {
   return (
-
     <div className="download-app-container">
-      <div className="download-app-content">
+      <div>
         <h2>Descarga nuestra app ahora</h2>
         <p>Regístrate y comienza a hacer pedidos de comida rápida</p>
-        <div className="download-app-buttons">
-          <button className="download-button">Descargar</button>
-          <button className="register-button">Registrarse</button>
-        </div>
+        <button className="btn btn-secondary btn-sm me-2">¡Descargar iOS!</button>
+        <button className="btn btn-secondary btn-sm">¡Descargar Android!</button>
       </div>
       <div className="download-app-image">
-        <img src="https://via.placeholder.com/300" alt="App placeholder" />
+        <img src={download} alt="App placeholder" />
       </div>
     </div>
   );

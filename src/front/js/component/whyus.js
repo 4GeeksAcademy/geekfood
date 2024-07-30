@@ -1,10 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faStar, faClock, faMapMarkedAlt, faTags, faHeadset, faComments } from '@fortawesome/free-solid-svg-icons';
+import '../../styles/whyus.css'
+
 
 export const Whyus = () => {
     return (
-        <div className="container mt-5">
+        <div className="wu-container py-5 my-5">
             <div className="text-center mb-4">
                 <h2>¿Por qué escogernos?</h2>
                 <p>Nuestra característica principal es la rapidez de entrega. Obtén tus alimentos favoritos en tiempo récord y disfruta de una experiencia sin igual.</p>
@@ -12,7 +14,7 @@ export const Whyus = () => {
             <div className="row">
                 <div className="col-md-4 mb-4">
                     <div className="text-center">
-                        <div className="mb-3">
+                        <div className="iconn mb-3">
                             <FontAwesomeIcon icon={faCheckCircle} size="3x" />
                         </div>
                         <p className="fw-bold">Entrega rápida</p>
@@ -21,7 +23,7 @@ export const Whyus = () => {
                 </div>
                 <div className="col-md-4 mb-4">
                     <div className="text-center">
-                        <div className="mb-3">
+                        <div className="iconn mb-3">
                             <FontAwesomeIcon icon={faStar} size="3x" />
                         </div>
                         <p className="fw-bold">Calidad garantizada</p>
@@ -30,7 +32,7 @@ export const Whyus = () => {
                 </div>
                 <div className="col-md-4 mb-4">
                     <div className="text-center">
-                        <div className="mb-3">
+                        <div className="iconn mb-3">
                             <FontAwesomeIcon icon={faClock} size="3x" />
                         </div>
                         <p className="fw-bold">Variedad de Opciones</p>
@@ -39,7 +41,7 @@ export const Whyus = () => {
                 </div>
                 <div className="col-md-4 mb-4">
                     <div className="text-center">
-                        <div className="mb-3">
+                        <div className="iconn mb-3">
                             <FontAwesomeIcon icon={faMapMarkedAlt} size="3x" />
                         </div>
                         <p className="fw-bold">Seguimiento en Tiempo Real</p>
@@ -48,7 +50,7 @@ export const Whyus = () => {
                 </div>
                 <div className="col-md-4 mb-4">
                     <div className="text-center">
-                        <div className="mb-3">
+                        <div className="iconn mb-3">
                             <FontAwesomeIcon icon={faTags} size="3x" />
                         </div>
                         <p className="fw-bold">Ofertas y Descuentos</p>
@@ -57,16 +59,16 @@ export const Whyus = () => {
                 </div>
                 <div className="col-md-4 mb-4">
                     <div className="text-center">
-                        <div className="mb-3">
+                        <div className="iconn mb-3">
                             <FontAwesomeIcon icon={faHeadset} size="3x" />
                         </div>
                         <p className="fw-bold">Atención al Cliente</p>
                         <p>Soporte dedicado para resolver cualquier problema</p>
                     </div>
                 </div>
-                <div className="col-md-4 mb-4">
+                <div className="col-md-4 mb-4 mx-auto">
                     <div className="text-center">
-                        <div className="mb-3">
+                        <div className="iconn mb-3">
                             <FontAwesomeIcon icon={faComments} size="3x" />
                         </div>
                         <p className="fw-bold">Opiniones y Reseñas</p>
@@ -74,9 +76,7 @@ export const Whyus = () => {
                     </div>
                 </div>
             </div>
-            <div className="text-center mt-4">
-                <img src="https://via.placeholder.com/300" alt="App placeholder" className="img-fluid" />
-            </div>
+
         </div>
     );
 };
