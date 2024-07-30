@@ -4,7 +4,7 @@ import download from "../../img/download.png"
 
 export const DownloadApp = () => {
   return (
-    <div className="download-app-container py-5 my-5 ">
+    <div className="download-app-container">
       <div>
         <h2>Descarga nuestra app ahora</h2>
         <p>Regístrate y comienza a hacer pedidos de comida rápida</p>

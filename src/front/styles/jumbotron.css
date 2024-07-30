@@ -1,7 +1,7 @@
-
 .card-img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 h1 {
@@ -19,24 +19,21 @@ p {
 }
 
 .container {
-    margin: 40px;
-
-}
-
-.jumbotron {
-    border: 1px solid #c9c9c954;
-    background-color: rgba(255, 201, 135, 0.564);
-
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .btn {
     background-color: #fd8d14;
     color: #000000;
-    border: #ffffff;
+    border: none;
     font-family: "Nunito", serif;
     font-weight: 300;
     font-style: normal;
     border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {

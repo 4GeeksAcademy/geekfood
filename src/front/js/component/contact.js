@@ -3,7 +3,7 @@ import '../../styles/whyus.css';
 
 export const Contact = () => {
   return (
-    <div className="wu-container text-center my-5 py-5">
+    <div className="container text-center">
       <h2>¡Contáctanos!</h2>
       <p>Estamos aquí para ayudarte.</p>
       <div className="row">

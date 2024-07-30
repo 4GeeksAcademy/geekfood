@@ -1,80 +1,65 @@
 .footer {
   background-color: rgba(255, 201, 135, 0.564);
-  padding: 10px 0;
+  padding: 20px 0;
   font-family: "Nunito", serif;
-  font-weight: 400;
-  font-style: normal;
   border: 1px solid #c9c9c954;
-
+  text-align: center;
+  /* Centrar contenido */
 }
 
 .footer h5 {
-  font-weight: bold;
   font-family: "Rakkas", serif;
   font-weight: 400;
-  font-style: normal;
-}
-
-.icon {
-  height: 180px;
-  width: 180px;
+  margin-bottom: 10px;
 }
 
 .footer p {
   margin-bottom: 10px;
   color: #000000;
   font-family: "Nunito", serif;
-  font-weight: 300;
-  font-style: normal;
   font-weight: bold;
-
 }
 
-.newsletter-form {
+.newsletter-formm {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+}
+
+.newsletter-inputt {
+  width: 100%;
   margin-bottom: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border-color: #747070;
+  padding: 10px;
 }
 
-.newsletter-form input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #000000;
-  border-radius: 4px 0 0 4px;
-}
-
-.newsletter-form button {
-  padding: 10px;
-  border: 1px solid #000000;
-  border-left: 0;
+.btn {
   background-color: #fd8d14;
-  color: rgb(0, 0, 0);
-  border-radius: 0 4px 4px 0;
+  color: #000000;
+  border: #ffffff;
   font-family: "Nunito", serif;
   font-weight: 300;
   font-style: normal;
+  border-radius: 4px;
 }
 
 .newsletter-form button:hover {
-  padding: 10px;
-  border: 1px solid #000000;
-  border-left: 0;
   background-color: #000000;
   color: rgb(255, 255, 255);
-  border-radius: 0 4px 4px 0;
-  font-family: "Nunito", serif;
-  font-weight: 300;
-  font-style: normal;
 }
 
 .social-icons {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .social-icons li {
   margin-bottom: 10px;
-  list-style: none;
-
 }
 
 .social-icons a {
@@ -93,7 +78,8 @@
 }
 
 .footer-links li {
-  display: inline;
+  display: inline-block;
+  /* Cambiado a inline-block para ser más responsivo */
   margin: 0 10px;
 }
 
@@ -101,11 +87,49 @@
   color: #000000;
   text-decoration: none;
   font-family: "Nunito", serif;
-  font-weight: 300;
   font-weight: bold;
-  margin-top: 20px;
 }
 
 .footer-links a:hover {
   color: #fd8d14;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 40px 0;
+    /* Aumentar padding en pantallas más grandes */
+  }
+
+  .newsletter-formm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    align-items: center;
+  }
+
+  .newsletter-inputt {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border-color: #747070;
+    padding: 10px;
+  }
+
+  .btn {
+    background-color: #fd8d14;
+    color: #000000;
+    border: #ffffff;
+    font-family: "Nunito", serif;
+    font-weight: 300;
+    font-style: normal;
+    border-radius: 4px;
+  }
+
+  .social-icons,
+  .footer-links {
+    text-align: center;
+    /* Centrar listas */
+  }
 }

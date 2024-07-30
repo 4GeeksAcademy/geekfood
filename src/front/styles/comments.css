@@ -1,0 +1,33 @@
+.c-container {
+    padding: 20px;
+    background-color: rgba(255, 201, 135, 0.564);
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card p {
+    margin: 0;
+}
+
+.card .font-weight-bold {
+    font-weight: bold;
+}
+
+.card h5 {
+    font-size: 1.25rem;
+}
+
+.text-center {
+    text-align: center;
+}
