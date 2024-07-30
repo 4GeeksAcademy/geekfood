@@ -4,8 +4,10 @@ body {
 
 .user-profile-container {
     display: flex;
-    height: calc(100vh - 60px); /* Ajuste para tener en cuenta el espacio superior e inferior */
-    padding: 30px 20px; /* Espacio superior e inferior */
+    height: calc(100vh - 60px);
+    /* Ajuste para tener en cuenta el espacio superior e inferior */
+    padding: 30px 20px;
+    /* Espacio superior e inferior */
     box-sizing: border-box;
 }
 
@@ -59,8 +61,10 @@ body {
 
 .saved-methods,
 .new-method {
-    width: 50%; /* Reducir el tamaño de las cajas al 50% del ancho original */
-    margin-bottom: 10px; /* Añadir margen inferior para la separación */
+    width: 50%;
+    /* Reducir el tamaño de las cajas al 50% del ancho original */
+    margin-bottom: 10px;
+    /* Añadir margen inferior para la separación */
 }
 
 .saved-method {
@@ -72,7 +76,8 @@ body {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 5px; /* Reducir el espacio entre los elementos */
+    margin-bottom: 5px;
+    /* Reducir el espacio entre los elementos */
 }
 
 .saved-method i {
@@ -126,4 +131,20 @@ body {
     width: 100%;
     border-top: 1px solid #ddd;
     margin: 20px 0;
+}
+
+.order-status {
+    font-size: 1.25rem;
+    /* Tamaño de fuente más grande */
+    font-weight: bold;
+    /* Negrita */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.card-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
