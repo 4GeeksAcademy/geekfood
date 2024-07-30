@@ -10,7 +10,7 @@ export const Newsletter = () => {
       </div>
       <div className="newsletter-form">
         <input type="email" placeholder="Ingresa tu correo" className="newsletter-input" />
-        <button className="newsletter-button">Suscríbete</button>
+        <button className="newsletter-button" href="/suscription">Suscríbete</button>
       </div>
       <p className="newsletter-terms">
         Al hacer clic en Suscríbete, confirmas que estás de acuerdo con nuestros Términos y Condiciones.

@@ -15,7 +15,7 @@ export const Whyus = () => {
                         <div className="mb-3">
                             <FontAwesomeIcon icon={faCheckCircle} size="3x" />
                         </div>
-                        <p className="font-weight-bold">Entrega rápida</p>
+                        <p className="fw-bold">Entrega rápida</p>
                         <p>Sin esperas largas</p>
                     </div>
                 </div>
@@ -24,7 +24,7 @@ export const Whyus = () => {
                         <div className="mb-3">
                             <FontAwesomeIcon icon={faStar} size="3x" />
                         </div>
-                        <p className="font-weight-bold">Calidad garantizada</p>
+                        <p className="fw-bold">Calidad garantizada</p>
                         <p>Ingredientes frescos y sabrosos</p>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ export const Whyus = () => {
                         <div className="mb-3">
                             <FontAwesomeIcon icon={faClock} size="3x" />
                         </div>
-                        <p className="font-weight-bold">Variedad de Opciones</p>
+                        <p className="fw-bold">Variedad de Opciones</p>
                         <p>Amplia gama de restaurantes y tipos de comida</p>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ export const Whyus = () => {
                         <div className="mb-3">
                             <FontAwesomeIcon icon={faMapMarkedAlt} size="3x" />
                         </div>
-                        <p className="font-weight-bold">Seguimiento en Tiempo Real</p>
+                        <p className="fw-bold">Seguimiento en Tiempo Real</p>
                         <p>Rastrea tu pedido desde la cocina hasta tu puerta</p>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ export const Whyus = () => {
                         <div className="mb-3">
                             <FontAwesomeIcon icon={faTags} size="3x" />
                         </div>
-                        <p className="font-weight-bold">Ofertas y Descuentos</p>
+                        <p className="fw-bold">Ofertas y Descuentos</p>
                         <p>Aprovecha promociones exclusivas</p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ export const Whyus = () => {
                         <div className="mb-3">
                             <FontAwesomeIcon icon={faHeadset} size="3x" />
                         </div>
-                        <p className="font-weight-bold">Atención al Cliente</p>
+                        <p className="fw-bold">Atención al Cliente</p>
                         <p>Soporte dedicado para resolver cualquier problema</p>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ export const Whyus = () => {
                         <div className="mb-3">
                             <FontAwesomeIcon icon={faComments} size="3x" />
                         </div>
-                        <p className="font-weight-bold">Opiniones y Reseñas</p>
+                        <p className="fw-bold">Opiniones y Reseñas</p>
                         <p>Lee lo que dicen otros clientes y haz tu elección informada</p>
                     </div>
                 </div>

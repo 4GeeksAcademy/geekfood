@@ -28,12 +28,11 @@ export const ProductDetail = () => {
     };
 
     return (
-        <div className="container m-5">
-            <div className="row">
-
+        <div className="container m-5 border rounded">
+            <div className="row mt-5 mb-5 my-3 mx-3">
                 <div className="section1 col-md-5">
                     <h1>Pasta en salsa Bolognesa</h1>
-                    <h3>$ 55</h3>
+                    <h3 className="text-black">$ 55</h3>
                     <ul className="nav nav-underline">
                         <li className="nav-item">
                             <a
@@ -89,15 +88,15 @@ export const ProductDetail = () => {
                 </div>
                 <div className="section2 col-md-1">
                 </div>
-                <div className="section3 col-md-6">
+                <div className="section3 col-md-6 ">
                     <div className="d-flex">
-                        <div className="selected-image" style={{ width: '100%', height: '400px', overflow: 'hidden' }}>
+                        <div className="selected-image rounded" style={{ width: '100%', height: '400px', overflow: 'hidden' }}>
                             <img src={selectedImage.src} alt={selectedImage.alt} className="w-100 h-100 object-fit-cover" />
                         </div>
-                        <div className="thumbnails" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginLeft: '10px' }}>
+                        <div className="thumbnails rounded" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginLeft: '10px' }}>
                             {images.map((image, index) => (
-                                <div className="thumbnail" key={index} onClick={() => setSelectedImage(image)}>
-                                    <img src={image.src} alt={image.alt} className="w-100 h-auto d-block" style={{ cursor: 'pointer', maxWidth: '80px' }} />
+                                <div className="thumbnail rounded" key={index} onClick={() => setSelectedImage(image)}>
+                                    <img src={image.src} alt={image.alt} className=" rounded w-100 h-auto d-block" style={{ cursor: 'pointer', maxWidth: '80px' }} />
                                 </div>
                             ))}
                         </div>

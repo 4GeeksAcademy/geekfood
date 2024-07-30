@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/home.css";
+import "../../styles/navbar.css";
+import icon from "../../img/GEEK2.png";
+
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg bg-body-tertiary">
+		<nav className="navbar navbar-expand-lg">
 			<div className="container-fluid">
-				<a className="navbar-brand" href="/">Logo</a>
+				<a href="/"><img src={icon} alt="icon" className="navbar-icon" /></a>
 				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
@@ -21,7 +23,6 @@ export const Navbar = () => {
 						<li className="nav-item">
 							<Link className="nav-link active" aria-current="page" to="/">Servicios</Link>
 						</li>
-
 						<li className="nav-item dropdown">
 							<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Productos
@@ -41,20 +42,17 @@ export const Navbar = () => {
 							<Link className="nav-link active" aria-current="page" to="/">Contactanos</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link active" aria-current="page" to="/productDetail">Detalle</Link>
+							<Link className="nav-link active" aria-current="page" to="/faq">FAQ's</Link>
 						</li>
-						<li className="nav-item">
-							<Link className="nav-link active" aria-current="page" to="/">Preguntas Frecuentes</Link>
-						</li>
-						<li className="nav-item">
+						{/* <li className="nav-item">
 							<Link className="nav-link active" aria-current="page" to="/"><i className="bi bi-cart"></i>(0)</Link>
-						</li>
+						</li> */}
 					</ul>
 					<div className="d-flex me-2">
-						<Link className="btn btn-secondary btn-sm" to="/registro">Registrate</Link>
+						<Link className="btn btn-outline-secondary btn-sm" to="/registro">Registrate</Link>
 					</div>
 					<div className="d-flex">
-						<Link className="btn btn-secondary btn-sm" to="/login">Inicia Sesión</Link>
+						<Link className="btn btn-outline-secondary btn-sm" to="/login">Inicia Sesión</Link>
 					</div>
 				</div>
 			</div>

@@ -3,7 +3,7 @@ import "../../styles/product.css";
 
 export const Product = () => {
     const productList = [
-        { id: 1, name: 'Product name', variant: 'Variant', price: 55 },
+        { id: 1, name: 'Product name', variant: 'Variant', price: 85 },
         { id: 2, name: 'Product name', variant: 'Variant', price: 55 },
         { id: 3, name: 'Product name', variant: 'Variant', price: 55 },
         { id: 4, name: 'Product name', variant: 'Variant', price: 55 },

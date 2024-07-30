@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import "../../styles/userProfile.css";
-import perfil from '../../img/takeout.jpg';
+import perfil from '../../img/profilePhoto.jpg';
 
 const UserProfile = () => {
   const [activeTab, setActiveTab] = useState('infoCuenta');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [savedMethods, setSavedMethods] = useState([
+    { id: 1, type: 'Visa Classic', number: '•••• 4242' },
+    { id: 2, type: 'Mastercard', number: '•••• 2329' },
+    { id: 3, type: 'American Express', number: '•••• 2314' },
+  ]);
+
+  const handleDeleteMethod = (id) => {
+    setSavedMethods(savedMethods.filter(method => method.id !== id));
+  };
 
   const renderContent = () => {
     switch (activeTab) {
       case 'infoCuenta':
         return (
-          <div>
-            <h2>Información de la cuenta</h2>
+          <div className="info-basic">
             <h3>Información básica</h3>
             <p><strong>Nombre:</strong> David Nazariego</p>
             <p><strong>Número de teléfono:</strong> +12345678987</p>
@@ -20,22 +30,19 @@ const UserProfile = () => {
       case 'mediosPago':
         return (
           <div className="payment-methods">
+            <h3>Medios de pagos agregados</h3>
             <div className="saved-methods">
-              <div className="saved-method">
-                <i className="bi bi-credit-card"></i>
-                <span>Visa Classic</span>
-                <span className="card-number">•••• 4242</span>
-              </div>
-              <div className="saved-method">
-                <i className="bi bi-credit-card"></i>
-                <span>Mastercard</span>
-                <span className="card-number">•••• 2329</span>
-              </div>
-              <div className="saved-method">
-                <i className="bi bi-credit-card"></i>
-                <span>American Express</span>
-                <span className="card-number">•••• 2314</span>
-              </div>
+              {savedMethods.map(method => (
+                <div key={method.id} className="saved-method">
+                  <i className="bi bi-credit-card"></i>
+                  <span>{method.type}</span>
+                  <span className="card-number">{method.number}</span>
+                  <i 
+                    className="bi bi-trash3 delete-icon" 
+                    onClick={() => handleDeleteMethod(method.id)}
+                  ></i>
+                </div>
+              ))}
             </div>
             <div className="divider"></div>
             <div className="new-method">
@@ -63,7 +70,45 @@ const UserProfile = () => {
       case 'ultimasOrdenes':
         return <div><h2>Últimas órdenes</h2></div>;
       case 'seguridad':
-        return <div><h2>Seguridad</h2></div>;
+        return (
+          <div className="security-form">
+            <h3 className="security-title">Cambiar contraseña</h3>
+            <div className="form-group">
+              <label htmlFor="currentPassword">Contraseña actual</label>
+              <input type="password" id="currentPassword" className="form-control" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="newPassword">Nueva contraseña</label>
+              <input
+                type="password"
+                id="newPassword"
+                className="form-control"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="confirmPassword">Confirmar nueva contraseña</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                className="form-control"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </div>
+            <button
+              className="btn"
+              onClick={() => {
+                if (newPassword !== confirmPassword) {
+                  alert('El campo nueva contraseña y confirmar nueva contraseña deben coincidir.');
+                }
+              }}
+            >
+              Guardar
+            </button>
+          </div>
+        );
       default:
         return null;
     }
@@ -78,33 +123,39 @@ const UserProfile = () => {
             <h4>Mi perfil</h4>
             <p>David</p>
           </div>
-          <ul className="nav flex-column">
-            <li className="nav-item">
-              <a className="nav-link" href="#" onClick={() => setActiveTab('infoCuenta')}>
-                Información de cuenta
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#" onClick={() => setActiveTab('mediosPago')}>
-                Medios de pago
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#" onClick={() => setActiveTab('ultimasOrdenes')}>
-                Últimas órdenes
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#" onClick={() => setActiveTab('seguridad')}>
-                Seguridad
-              </a>
-            </li>
-          </ul>
+          <a
+            href="#"
+            className={`nav-link ${activeTab === 'infoCuenta' ? 'active' : ''}`}
+            onClick={() => setActiveTab('infoCuenta')}
+          >
+            Información de cuenta
+          </a>
+          <a
+            href="#"
+            className={`nav-link ${activeTab === 'mediosPago' ? 'active' : ''}`}
+            onClick={() => setActiveTab('mediosPago')}
+          >
+            Medios de pago
+          </a>
+          <a
+            href="#"
+            className={`nav-link ${activeTab === 'ultimasOrdenes' ? 'active' : ''}`}
+            onClick={() => setActiveTab('ultimasOrdenes')}
+          >
+            Últimas órdenes
+          </a>
+          <a
+            href="#"
+            className={`nav-link ${activeTab === 'seguridad' ? 'active' : ''}`}
+            onClick={() => setActiveTab('seguridad')}
+          >
+            Seguridad
+          </a>
         </div>
       </nav>
-      <div className="main-content">
+      <main className="main-content">
         {renderContent()}
-      </div>
+      </main>
     </div>
   );
 };
