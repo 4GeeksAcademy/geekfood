@@ -1,6 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// src/component/Navbar.js
+import React from 'react';
 import "../../styles/navbar.css";
+import { Link } from 'react-router-dom';
 import icon from "../../img/GEEK2.png";
 
 
@@ -18,35 +19,21 @@ export const Navbar = () => {
 							<Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link active" aria-current="page" to="/">Nosotros</Link>
+							<Link className="nav-link active" aria-current="page" to="/whyus">Nosotros</Link>
 						</li>
+
 						<li className="nav-item">
-							<Link className="nav-link active" aria-current="page" to="/">Servicios</Link>
+							<Link className="nav-link active" aria-current="page" to="/product">Productos</Link>
 						</li>
-						<li className="nav-item dropdown">
-							<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Productos
-							</a>
-							<ul className="dropdown-menu">
-								<li><a className="dropdown-item" href="#">Americana</a></li>
-								<li><a className="dropdown-item" href="#">China</a></li>
-								<li><a className="dropdown-item" href="#">Coreana</a></li>
-								<li><a className="dropdown-item" href="#">Española</a></li>
-								<li><a className="dropdown-item" href="#">India</a></li>
-								<li><a className="dropdown-item" href="#">Italiana</a></li>
-								<li><a className="dropdown-item" href="#">Japonesa</a></li>
-								<li><a className="dropdown-item" href="#">Mexicana</a></li>
-							</ul>
-						</li>
+
 						<li className="nav-item">
-							<Link className="nav-link active" aria-current="page" to="/">Contactanos</Link>
+							<Link className="nav-link active" aria-current="page" to="/contactUs">Contactanos</Link>
 						</li>
 						<li className="nav-item">
 							<Link className="nav-link active" aria-current="page" to="/faq">FAQ's</Link>
 						</li>
-						{/* <li className="nav-item">
-							<Link className="nav-link active" aria-current="page" to="/"><i className="bi bi-cart"></i>(0)</Link>
-						</li> */}
+						<div className="d-flex">
+						</div>
 					</ul>
 					<div className="d-flex me-2">
 						<Link className="btn btn-outline-secondary btn-sm" to="/registro">Registrate</Link>
@@ -54,6 +41,7 @@ export const Navbar = () => {
 					<div className="d-flex">
 						<Link className="btn btn-outline-secondary btn-sm" to="/login">Inicia Sesión</Link>
 					</div>
+
 				</div>
 			</div>
 		</nav>

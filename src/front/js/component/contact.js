@@ -1,12 +1,14 @@
 import React from 'react';
 import '../../styles/whyus.css';
+import backgroundImage from "../../img/home1.png";
+
 
 export const Contact = () => {
   return (
-    <div className="container text-center">
+    <div className="contact-container text-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <h2>¡Contáctanos!</h2>
       <p>Estamos aquí para ayudarte.</p>
-      <div className="row">
+      <div className="row w-100">
         <div className="col-md-4">
           <i className="iconn bi bi-envelope-fill" style={{ fontSize: '2rem' }}></i>
           <h5 className="mt-3">Email</h5>

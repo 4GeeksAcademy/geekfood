@@ -49,7 +49,7 @@ const Faq = () => {
 
   return (
     <div className="faq-container">
-      <h1>Preguntas frecuentes</h1>
+      <h2>Preguntas frecuentes</h2>
       <p>Encuentra respuestas a las preguntas más comunes sobre el funcionamiento de nuestra plataforma y el proceso de pedidos.</p>
       <div className="faq-list">
         {data.map((item, index) => (

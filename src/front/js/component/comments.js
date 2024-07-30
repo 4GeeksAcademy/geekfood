@@ -5,11 +5,11 @@ import '../../styles/comments.css';
 export const Comentarios = () => {
     const [commentText, setCommentText] = useState("");
     const [comentarios] = useState([
-        { id: 1, nombre: 'Cliente 1', contenido: '¡Excelente servicio!', rating: 5 },
-        { id: 2, nombre: 'Cliente 2', contenido: 'Muy buen producto.', rating: 4 },
-        { id: 3, nombre: 'Cliente 3', contenido: 'Me encantó la experiencia.', rating: 3 },
-        { id: 4, nombre: 'Cliente 4', contenido: 'Recomiendo totalmente.', rating: 5 },
-        { id: 5, nombre: 'Cliente 5', contenido: 'Volvería a comprar aquí.', rating: 4 },
+        { id: 1, nombre: 'Maria Salazar', contenido: '¡Excelente servicio!', rating: 5 },
+        { id: 2, nombre: 'Daniel Guzmán', contenido: 'Muy buena aplicación.', rating: 4 },
+        { id: 3, nombre: 'Miguen Sanhueza', contenido: 'Me encantó la experiencia.', rating: 3 },
+        { id: 4, nombre: 'Carolina Mendez', contenido: 'Recomiendo totalmente.', rating: 4 },
+        { id: 5, nombre: 'Veronica Landaeta', contenido: 'Volvería a comprar aquí.', rating: 5 },
     ]);
 
     const enviarComentario = () => {
@@ -21,7 +21,7 @@ export const Comentarios = () => {
     return (
         <div className="c-container w-100">
             <div className="row justify-content-center">
-                <div className="col-md-8">
+                <div className="col-md-8 cont">
                     <h2 className="text-center">Nuestras calificaciones</h2>
                     <p className="text-center mb-4">Acá puedes ver las calificaciones que nuestros clientes nos dejan.</p>
                     <div className="row">

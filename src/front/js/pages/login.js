@@ -42,7 +42,7 @@ export const Login = () => {
 	};
 
 	return (
-		<div className="container-fluid p-0 mb-1">
+		<div className="container-fluid p-5 mb-1">
 			<div className="row no-gutters">
 				{/* Formulario de Login */}
 				<div className="form-login col-md-6 d-flex align-items-center justify-content-center">

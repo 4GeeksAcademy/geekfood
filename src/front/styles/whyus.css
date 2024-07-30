@@ -1,6 +1,16 @@
-.wu-container {
+/* .wu-container {
     margin-top: 200px;
     margin-bottom: 200px;
+} */
+
+.contact-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 10px;
+    margin-top: 100px;
+
 }
 
 h2 {
@@ -15,12 +25,20 @@ h2 {
 }
 
 .wu-container {
-    max-width: 1200px;
-    /* Ajusta este valor según tus necesidades */
-    margin: 0 auto;
-    /* Centra el contenedor */
-    padding: 0 15px;
-    /* Añade un pequeño padding para que el contenido no toque los bordes */
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.w-contain {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 10px;
 }
 
 .row {

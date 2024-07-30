@@ -2,7 +2,9 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: "Nunito", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .faq-container h1 {
@@ -31,9 +33,18 @@
   font-weight: bold;
 }
 
+.bi-caret-down {
+  color: #fd8d14;
+}
+
+.bi-caret-up {
+  color: #fd8d14;
+}
+
 .faq-answer {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
+  color: #7e7e7e;
 }
 
 .contact-section {

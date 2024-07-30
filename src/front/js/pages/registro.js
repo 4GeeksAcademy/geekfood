@@ -49,7 +49,7 @@ export const Registro = () => {
 	};
 
 	return (
-		<div className="container-fluid p-0 mb-1">
+		<div className="container-fluid p-5 mb-1">
 			<div className="row no-gutters">
 
 				{/* Imagen */}
