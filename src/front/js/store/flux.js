@@ -21,7 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							'Content-Type': 'application/json'
 						}
 					});
-					
+
 					// Obtener los datos de la respuesta
 					const data = await response.json();
 
@@ -54,6 +54,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ currentUser: null, access_token: null });
 				sessionStorage.removeItem('access_token');
 				sessionStorage.removeItem('currentUser');
+			},
+
+			checkCurrentUser: () => {
+				console.log("Verificando usuario")
+				if (sessionStorage.getItem('access_token')) {
+					setStore({
+						access_token: sessionStorage.getItem('access_token'),
+						currentUser: JSON.parse(sessionStorage.getItem('currentUser'))
+					})
+				}
 			},
 
 			changeColor: (index, color) => {

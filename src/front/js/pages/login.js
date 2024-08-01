@@ -2,19 +2,22 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext"; // Ajusta la ruta según tu configuración
 import imgLogin from "../../img/login.png";
 import "../../styles/login.css";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [errors, setErrors] = useState({});
+	const navigate = useNavigate()
+
 
 	const validateForm = () => {
 		let formErrors = {};
 		let isValid = true;
 
 		// Validar el campo de email
-		if (!email) {
+		if (email === '') {
 			formErrors.email = "El campo de email es obligatorio";
 			isValid = false;
 		} else if (!/\S+@\S+\.\S+/.test(email)) {
@@ -23,7 +26,7 @@ export const Login = () => {
 		}
 
 		// Validar el campo de password
-		if (!password) {
+		if (password === '') {
 			formErrors.password = "El campo de contraseña es obligatorio";
 			isValid = false;
 		} else if (password.length < 6) {
@@ -43,7 +46,10 @@ export const Login = () => {
 
 			if (response.status === 'success') {
 				console.log("Inicio de sesión exitoso");
+				setEmail('')
+				setPassword('')
 				// Redirigir o realizar otras acciones necesarias tras un login exitoso
+				navigate('/')
 			} else {
 				setErrors({ general: response.message });
 			}
