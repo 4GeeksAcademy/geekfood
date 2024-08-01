@@ -20,22 +20,6 @@
   font-weight: bold;
 }
 
-.newsletter-formm {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 500px;
-  align-items: center;
-}
-
-.newsletter-inputt {
-  width: 100%;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  border-color: #747070;
-  padding: 10px;
-}
 
 .btn {
   background-color: #fd8d14;
@@ -47,11 +31,6 @@
   border-radius: 4px;
 }
 
-.newsletter-form button:hover {
-  background-color: #000000;
-  color: rgb(255, 255, 255);
-}
-
 .social-icons {
   list-style: none;
   padding: 0;
@@ -59,7 +38,9 @@
 }
 
 .social-icons li {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #000000;
 }
 
 .social-icons a {

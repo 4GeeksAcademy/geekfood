@@ -1,0 +1,13 @@
+.s-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 10px;
+    margin-top: 100px;
+}
+
+.contain {
+    padding: auto;
+    margin: 0 auto;
+}
