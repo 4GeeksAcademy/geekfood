@@ -1,6 +1,6 @@
 .discover-products-container {
   padding: 50px 20px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.564);
   text-align: center;
 }
 
@@ -102,7 +102,7 @@
 
 .view-product-button {
   background-color: #fd8d14;
-  color: #000000;;
+  color: #000000;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -117,6 +117,7 @@
 
 .view-product-button:hover {
   background-color: #000000;
-  color: #ffffff;;
+  color: #ffffff;
+  ;
 
 }

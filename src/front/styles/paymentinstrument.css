@@ -1,0 +1,29 @@
+/* src/front/styles/paymentinstrument.css */
+
+.payment-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-modal .payment-options {
+    margin: 10px 0;
+}
+
+.payment-modal label {
+    margin-bottom: 10px;
+}
+
+.payment-modal button {
+    align-self: center;
+}

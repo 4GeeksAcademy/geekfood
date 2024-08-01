@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaStar, FaRegStar } from 'react-icons/fa';
+import '../../styles/starts.css'
 
 const StarRating = ({ rating }) => {
     const stars = Array.from({ length: 5 }, (_, index) => (
@@ -7,7 +8,7 @@ const StarRating = ({ rating }) => {
     ));
 
     return (
-        <div>
+        <div className='stars'>
             {stars}
         </div>
     );

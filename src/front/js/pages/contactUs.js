@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../../styles/contactUs.css";
-import imagen from "../../img/takeout.jpg";
+import imagen from "../../img/contact.png";
 
 function ContactUs() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -20,12 +20,13 @@ function ContactUs() {
     setValidated(true);
   };
 
+
   return (
-    <div className="d-flex vh-100">
+    <div className="d-flex vh-100 p-5 mb-1">
       <div className="left-side">
         <img src={imagen} className="d-block w-100 h-100" alt="..." />
       </div>
-      <div className="right-side p-5">
+      <div className="form-login right-side p-5 mb-1">
         <h1>Contáctanos</h1>
         <p>Soporte al cliente siempre disponible.</p>
         <form
@@ -75,7 +76,7 @@ function ContactUs() {
               Por favor ingrese su mensaje.
             </div>
           </div>
-          <button type="submit" className="btn btn-dark">Enviar</button>
+          <button type="submit" className="btn btn-secondary w-100">Enviar</button>
         </form>
       </div>
     </div>

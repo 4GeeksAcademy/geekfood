@@ -49,7 +49,7 @@ const Faq = () => {
 
   return (
     <div className="faq-container">
-      <h1>Preguntas frecuentes</h1>
+      <h2>Preguntas frecuentes</h2>
       <p>Encuentra respuestas a las preguntas más comunes sobre el funcionamiento de nuestra plataforma y el proceso de pedidos.</p>
       <div className="faq-list">
         {data.map((item, index) => (
@@ -67,8 +67,7 @@ const Faq = () => {
       <div className="contact-section">
         <h2>¿Todavía tienes preguntas?</h2>
         <p>Contáctanos para obtener más información.</p>
-        <button className="btn btn-secondary">Contacto</button>
-        <button onClick={handleContactClick}>Contacto</button>
+        <button className="btn btn-secondary" onClick={handleContactClick}>Contacto</button>
       </div>
     </div>
   );

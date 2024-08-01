@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/resumebuy.css';
 
 const ResumeBuy = ({ cart, updateCart, removeFromCart }) => {
     const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    const navigate = useNavigate();
 
     const handleRemove = (id) => {
         removeFromCart(id);
     };
 
-    const handleQuantityChange = (id, delta) => {
-        updateCart(id, delta);
+    const handleContinue = () => {
+        navigate('/checkout', { state: { cart, totalPrice } });
     };
 
     return (
@@ -37,9 +38,10 @@ const ResumeBuy = ({ cart, updateCart, removeFromCart }) => {
             <div className="summary">
                 <h3>Resumen de la compra</h3>
                 <p>Productos {/* ({cart.length}) */}: ${totalPrice}</p>
-                <p>Descuentos: $0</p>
-                <p>Total: ${totalPrice}</p>
-                <button className="btn btn-outline-secondary btn-sm continue-buying">Continuar compra</button>
+                {/* <p>Descuentos: $0</p> */}
+                <p>Total cargos: $3500</p>
+                <p>Total: ${totalPrice + 3500}</p>
+                <button className="btn btn-outline-secondary btn-sm continue-buying" onClick={handleContinue}>Continuar compra</button>
                 <Link className="btn btn-outline-secondary btn-sm continue-shopping" to="/product_americano">Seguir comprando</Link>
             </div>
         </div>

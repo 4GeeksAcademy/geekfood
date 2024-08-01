@@ -1,6 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// src/component/Navbar.js
+import React from 'react';
 import "../../styles/navbar.css";
+import { Link } from 'react-router-dom';
 import icon from "../../img/GEEK2.png";
 import { FaShoppingCart } from 'react-icons/fa';
 
@@ -25,21 +26,10 @@ export const Navbar = ({ cart }) => {
                         <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/">Servicios</Link>
                         </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Productos
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Americana</a></li>
-                                <li><a className="dropdown-item" href="#">China</a></li>
-                                <li><a className="dropdown-item" href="#">Coreana</a></li>
-                                <li><a className="dropdown-item" href="#">Española</a></li>
-                                <li><a className="dropdown-item" href="#">India</a></li>
-                                <li><a className="dropdown-item" href="#">Italiana</a></li>
-                                <li><a className="dropdown-item" href="#">Japonesa</a></li>
-                                <li><a className="dropdown-item" href="#">Mexicana</a></li>
-                            </ul>
+                        <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to="/product_americano">Productos</Link>
                         </li>
+
                         <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/">Contactanos</Link>
                         </li>
