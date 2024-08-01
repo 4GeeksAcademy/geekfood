@@ -5,7 +5,7 @@ import "../../styles/login.css";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-	const { store, actions } = useContext(Context);
+	const { actions } = useContext(Context);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [errors, setErrors] = useState({});

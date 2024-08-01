@@ -1,7 +1,7 @@
 // src/component/Navbar.js
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import "../../styles/navbar.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import icon from "../../img/GEEK2.png";
 import { FaShoppingCart } from 'react-icons/fa';
 import { Context } from '../store/appContext';
@@ -9,6 +9,11 @@ import { Context } from '../store/appContext';
 export const Navbar = ({ cart }) => {
     const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
     const { store, actions } = useContext(Context)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (store.currentUser === null) navigate('/')
+    }, [store.currentUser]);
 
     return (
         <nav className="navbar navbar-expand-lg">

@@ -7,10 +7,13 @@ import { useNavigate } from "react-router-dom";
 export const Registro = () => {
 	const { actions } = useContext(Context)
 	const [name, setName] = useState('')
-	const [username, setUsername] = useState('')
-	const [password, setPassword] = useState('')
-	const [confirmPassword, setConfirmPassword] = useState('')
-	const [show, setShow] = useState(false)
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [confirmPassword, setConfirmPassword] = useState('');
+	const [errors, setErrors] = useState({});
+	const [show, setShow] = useState(false);
+
+	const navigate = useNavigate()
 
 	const validateForm = () => {
 		let formErrors = {};
@@ -44,11 +47,24 @@ export const Registro = () => {
 		return isValid;
 	};
 
-	const handleSubmit = (e) => {
+
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (validateForm()) {
-			// Procesar el registro
-			console.log("Formulario válido, procesando registro...");
+			const registroData = { name, email, password };
+			const response = await actions.registro(registroData);
+
+			if (response.status === 'success') {
+				console.log("Inicio de sesión exitoso");
+				setName('')
+				setEmail('')
+				setPassword('')
+				setConfirmPassword('')
+				// Redirigir o realizar otras acciones necesarias tras un login exitoso
+				navigate('/login')
+			} else {
+				setErrors({ general: response.message });
+			}
 		}
 	};
 
@@ -135,12 +151,12 @@ export const Registro = () => {
 							<input
 								type="password"
 								className="form-control"
-								id="exampleInputPassword1"
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
+								id="exampleInputPassword2"
+								value={confirmPassword}
+								onChange={(e) => setConfirmPassword(e.target.value)}
 							/>
 							<div id="emailHelp" className="form-text">Nunca compartiremos tu contraseña.</div>
-							{errors.password && <div className="text-danger">{errors.password}</div>}
+							{errors.confirmPassword && <div className="text-danger">{errors.confirmPassword}</div>}
 						</div>
 						<div className="mb-3">
 							<button type="submit" className="btn btn-secondary w-100">Registrarse</button>

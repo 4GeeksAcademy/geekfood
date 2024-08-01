@@ -66,6 +66,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			registro: async (datos) => {
+				try {
+					// Realizar la solicitud al backend
+					const response = await fetch(process.env.BACKEND_URL + "/api/registro", {
+						method: 'POST',
+						body: JSON.stringify(datos),
+						headers: {
+							'Content-Type': 'application/json'
+						}
+					});
+
+					// Obtener los datos de la respuesta
+					const data = await response.json();
+
+					if (response.ok) {
+
+						return { status: 'success' };
+					} else {
+						// Si el servidor respondió con un error
+						setStore({ errorMessage: data.message || 'Error al iniciar sesión' });
+						return { status: 'error', message: data.message };
+					}
+				} catch (error) {
+					// Manejo de errores de red u otros
+					console.error('Error en la solicitud de login:', error);
+					setStore({ errorMessage: 'Error en la solicitud. Inténtalo de nuevo más tarde.' });
+					return { status: 'error', message: 'Error en la solicitud. Inténtalo de nuevo más tarde.' };
+				}
+			},
 
 		}
 	};
