@@ -1,63 +1,76 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-
-
+			currentUser: null,
+			access_token: null,
+			errorMessage: null,
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
+			// Use getActions to call a function within a function
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
 
-
 			login: async (datos) => {
 				try {
-					// fetching data from the backend
+					// Realizar la solicitud al backend
 					const response = await fetch(process.env.BACKEND_URL + "/api/login", {
 						method: 'POST',
 						body: JSON.stringify(datos),
 						headers: {
 							'Content-Type': 'application/json'
 						}
-					})
-					const data = await response.json()
+					});
+					
+					// Obtener los datos de la respuesta
+					const data = await response.json();
 
-					//console.log(data)
-					const { access_token, currentUser, status, message } = data
+					if (response.ok) {
+						const { access_token, currentUser } = data;
 
-					// guardando en el store
-					setStore({ currentUser, access_token })
+						// Guardar en el store
+						setStore({ currentUser, access_token, errorMessage: null });
 
-					// guardando en el navegador
-					sessionStorage.setItem('access_token', access_token)
-					sessionStorage.setItem('currentUser', JSON.stringify(currentUser))
+						// Guardar en el navegador
+						sessionStorage.setItem('access_token', access_token);
+						sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
 
-					return { status, message }
-
+						return { status: 'success' };
+					} else {
+						// Si el servidor respondió con un error
+						setStore({ errorMessage: data.message || 'Error al iniciar sesión' });
+						return { status: 'error', message: data.message };
+					}
 				} catch (error) {
-					console.log(error)
+					// Manejo de errores de red u otros
+					console.error('Error en la solicitud de login:', error);
+					setStore({ errorMessage: 'Error en la solicitud. Inténtalo de nuevo más tarde.' });
+					return { status: 'error', message: 'Error en la solicitud. Inténtalo de nuevo más tarde.' };
 				}
 			},
 
-
-
-
+			logout: () => {
+				// Limpiar el store y el almacenamiento del navegador
+				setStore({ currentUser: null, access_token: null });
+				sessionStorage.removeItem('access_token');
+				sessionStorage.removeItem('currentUser');
+			},
 
 			changeColor: (index, color) => {
-				//get the store
+				// Obtener el store
 				const store = getStore();
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
+				// Actualizar el color en el array demo
 				const demo = store.demo.map((elm, i) => {
 					if (i === index) elm.background = color;
 					return elm;
 				});
 
-				//reset the global store
+				// Actualizar el store global
 				setStore({ demo: demo });
-			}
+			},
+
+			// Otras acciones...
 		}
 	};
 };
