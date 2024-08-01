@@ -34,6 +34,7 @@ const Invoice = () => {
             </div> */}
 
             <div className="delivery-info">
+                <p>Numero de orden: 0000000001</p>
                 <p>Repartidor: Nombre del repartidor</p>
                 <p>Transporte: Bicicleta</p>
                 <p>Inicio: 9:27 p.m.</p>
