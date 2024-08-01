@@ -1,0 +1,75 @@
+/* src/front/styles/invoice.css */
+
+.invoice-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.invoice-container h2 {
+    margin-bottom: 10px;
+}
+
+.pending-review {
+    color: #6c757d;
+    font-weight: bold;
+}
+
+.delivery-info,
+.payment-info,
+.cost-summary {
+    margin-top: 20px;
+}
+
+.delivery-info img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.delivery-info p,
+.payment-info p,
+.cost-summary p {
+    margin: 5px 0;
+}
+
+.confirmation-message p {
+    margin-top: 30px;
+    color: #fd8d14;
+    font-family: "Rakkas", serif;
+    font-style: normal;
+
+}
+
+.review-button {
+    background-color: #fd8d14;
+    color: #000000;
+    border: #ffffff;
+    font-family: "Nunito", serif;
+    font-weight: 300;
+    font-style: normal;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.review-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.restaurant-image {
+    width: 100px; 
+    height: auto;
+    margin-right: 20px;
+}
+
+.confirmation-message {
+    font-family: "Rakkas", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fd8d14;
+}

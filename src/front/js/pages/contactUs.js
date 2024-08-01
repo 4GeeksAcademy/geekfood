@@ -20,12 +20,13 @@ function ContactUs() {
     setValidated(true);
   };
 
+
   return (
-    <div className="d-flex vh-100">
+    <div className="d-flex vh-100 p-5 mb-1">
       <div className="left-side">
         <img src={imagen} className="d-block w-100 h-100" alt="..." />
       </div>
-      <div className="right-side p-5">
+      <div className="form-login right-side p-5 mb-1">
         <h1>Contáctanos</h1>
         <p>Soporte al cliente siempre disponible.</p>
         <form

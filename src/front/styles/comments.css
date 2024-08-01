@@ -1,8 +1,11 @@
 .c-container {
     padding: 20px;
     background-color: rgba(255, 201, 135, 0.564);
-    margin-top: 200px;
-    margin-bottom: 200px;
+}
+
+.cont {
+    margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 .card {

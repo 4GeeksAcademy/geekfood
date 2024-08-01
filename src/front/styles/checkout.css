@@ -1,0 +1,16 @@
+/* src/front/styles/checkout.css */
+
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.summary {
+    margin-top: 20px;
+}
+
+.btn {
+    margin: 10px 0;
+}
+

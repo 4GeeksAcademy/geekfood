@@ -4,8 +4,11 @@
   justify-content: center;
   margin: 0;
   padding: 0;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 10px;
 }
 
 .download-app-image {

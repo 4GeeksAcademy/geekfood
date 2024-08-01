@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../../styles/login.css";
+import "../../styles/fpassword.css";
+import backgroundImage from "../../img/password.png";
 
 export const FPassword = () => {
     const [email, setEmail] = useState("");
@@ -9,7 +10,6 @@ export const FPassword = () => {
         let formErrors = {};
         let isValid = true;
 
-        // Validar el campo de email
         if (!email) {
             formErrors.email = "El campo de correo electrónico es obligatorio";
             isValid = false;
@@ -25,13 +25,12 @@ export const FPassword = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
-            // Procesar el envío de enlace de reseteo de contraseña
             console.log("Formulario válido, procesando envío de enlace...");
         }
     };
 
     return (
-        <div className="container d-flex align-items-center justify-content-center">
+        <div className="f-container d-flex align-items-center justify-content-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
             {/* Formulario de Reseteo Password */}
             <div className="form-login col-md-6 d-flex align-items-center justify-content-center">
                 <form className="w-100" onSubmit={handleSubmit}>

@@ -6,11 +6,17 @@ const UserProfile = () => {
   const [activeTab, setActiveTab] = useState('infoCuenta');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [savedMethods, setSavedMethods] = useState([
     { id: 1, type: 'Visa Classic', number: '•••• 4242' },
     { id: 2, type: 'Mastercard', number: '•••• 2329' },
     { id: 3, type: 'American Express', number: '•••• 2314' },
   ]);
+  const [rating, setRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [review, setReview] = useState('');
+  const [isEditingName, setIsEditingName] = useState(false);
+  const [name, setName] = useState('David Nazariego');
 
   const handleDeleteMethod = (id) => {
     setSavedMethods(savedMethods.filter(method => method.id !== id));
@@ -60,7 +66,22 @@ const UserProfile = () => {
         return (
           <div className="info-basic">
             <h3>Información básica</h3>
-            <p><strong>Nombre:</strong> David Nazariego</p>
+            <p>
+              <strong>Nombre: </strong>
+              {isEditingName ? (
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  onBlur={() => setIsEditingName(false)}
+                  autoFocus
+                />
+              ) : (
+                <>
+                  {name} <i className="bi bi-pen" onClick={() => setIsEditingName(true)}></i>
+                </>
+              )}
+            </p>
             <p><strong>Número de teléfono:</strong> +12345678987</p>
             <p><strong>Email:</strong> hola@gmail.com</p>
           </div>
@@ -183,6 +204,64 @@ const UserProfile = () => {
             >
               Guardar
             </button>
+            <div className="divider"></div>
+            <h3 className="security-title">Cambiar número de teléfono</h3>
+            <div className="form-group">
+              <label htmlFor="phoneNumber">Ingresa tu nuevo número de teléfono</label>
+              <input
+                type="text"
+                id="phoneNumber"
+                className="form-control"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
+            </div>
+            <button
+              className="btn"
+              onClick={() => {
+                alert('Número de teléfono actualizado.');
+              }}
+            >
+              Guardar
+            </button>
+          </div>
+        );
+      case 'resenasValoraciones':
+        return (
+          <div className="reviews-section">
+            <h3 className="security-title">Experiencias de nuestros clientes</h3>
+            <div className="stars">
+              {[1, 2, 3, 4, 5].map(star => (
+                <i
+                  key={star}
+                  className={`bi bi-star${star <= (hoverRating || rating) ? '-fill' : ''}`}
+                  onMouseEnter={() => setHoverRating(star)}
+                  onMouseLeave={() => setHoverRating(0)}
+                  onClick={() => setRating(star)}
+                  style={{ color: star <= (hoverRating || rating) ? 'yellow' : 'gray', fontSize: '24px' }}
+                ></i>
+              ))}
+            </div>
+            <div className="form-group">
+              <label htmlFor="review"></label>
+              <textarea
+                id="review"
+                className="form-control"
+                placeholder="Déjanos tu reseña aquí"
+                value={review}
+                onChange={(e) => setReview(e.target.value)}
+              ></textarea>
+            </div>
+            <button
+              className="btn"
+              onClick={() => {
+                alert('Comentario enviado.');
+                setReview('');
+                setRating(0);
+              }}
+            >
+              Enviar
+            </button>
           </div>
         );
       default:
@@ -227,6 +306,13 @@ const UserProfile = () => {
           >
             Seguridad
           </a>
+          <a
+            href="#"
+            className={`nav-link ${activeTab === 'resenasValoraciones' ? 'active' : ''}`}
+            onClick={() => setActiveTab('resenasValoraciones')}
+          >
+            Reseñas y valoraciones
+          </a>
         </div>
       </nav>
       <main className="main-content">
@@ -237,3 +323,4 @@ const UserProfile = () => {
 };
 
 export default UserProfile;
+``

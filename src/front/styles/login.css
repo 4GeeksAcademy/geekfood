@@ -6,13 +6,16 @@ body {
     font-family: "Nunito", serif;
     font-weight: 400;
     font-style: normal;
-
 }
 
-.form-login {
+.container-fluid {
+    padding-left: 100px;
+}
+
+/* .form-login {
     margin-top: 80px;
     margin-bottom: 80px;
-}
+} */
 
 .text {
     text-decoration: none;

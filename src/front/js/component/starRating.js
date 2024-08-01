@@ -1,23 +1,17 @@
 import React from 'react';
-import '../../styles/starrating.css'
+import { FaStar, FaRegStar } from 'react-icons/fa';
+import '../../styles/starts.css'
 
-const StarRating = ({ rating, onChange }) => {
-  return (
-    <div className="star-rating">
-      {[...Array(5)].map((_, index) => {
-        const ratingValue = index + 1;
-        return (
-          <span
-            key={index}
-            className={`star ${ratingValue <= rating ? 'filled' : ''}`}
-            onClick={() => onChange(ratingValue)}
-          >
-            ★
-          </span>
-        );
-      })}
-    </div>
-  );
+const StarRating = ({ rating }) => {
+    const stars = Array.from({ length: 5 }, (_, index) => (
+        index < rating ? <FaStar key={index} /> : <FaRegStar key={index} />
+    ));
+
+    return (
+        <div className='stars'>
+            {stars}
+        </div>
+    );
 };
 
 export default StarRating;
