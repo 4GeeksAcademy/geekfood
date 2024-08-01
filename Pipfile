@@ -18,6 +18,9 @@ gunicorn = "*"
 cloudinary = "*"
 flask-admin = "*"
 typing-extensions = "*"
+<<<<<<< HEAD
+flask-mail = "*"
+=======
 pipenv = "*"
 migrate = "*"
 cors = "*"

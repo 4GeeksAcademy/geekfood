@@ -1,6 +1,6 @@
 .discover-products-container {
   padding: 50px 20px;
-  background-color: rgba(255, 201, 135, 0.564);
+  background-color: rgba(255, 255, 255, 0.564);
   text-align: center;
 }
 
@@ -56,7 +56,7 @@
   width: 200px;
   text-align: left;
   transition: transform 0.2s ease-in-out;
-  cursor: pointer;
+
 }
 
 .restaurant-card:hover {
@@ -80,10 +80,44 @@
 }
 
 .clear-filter {
+  background-color: #fd8d14;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: "Nunito", serif;
+}
+
+.clear-filter:hover {
   background-color: #000000;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.view-product-button {
+  background-color: #fd8d14;
+  color: #000000;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  font-family: "Nunito", serif;
+}
+
+.view-product-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  ;
+
 }

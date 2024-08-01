@@ -53,3 +53,11 @@
     background-color: #000000;
     color: #ffffff;
 }
+
+.cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0 5px;
+    margin-left: 5px;
+}

@@ -1,0 +1,68 @@
+.view-products-container {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.dish-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.dish-card {
+    border: 1px solid #dddddd;
+    padding: 20px;
+    width: 200px;
+    text-align: left;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.dish-card:hover {
+    transform: scale(1.05);
+}
+
+.dish-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.dish-details h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.dish-details p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.view-detail-button {
+    background-color: #fd8d14;
+    color: #000000;;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    font-family: "Nunito", serif;
+}
+
+.view-detail-button:hover {
+    background-color: #000000;
+    color: #ffffff;;
+}
+
+

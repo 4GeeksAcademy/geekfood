@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 const DiscoverProducts = () => {
     const [filter, setFilter] = useState({ country: '', category: '' });
+    const navigate = useNavigate();
 
     const handleFilterChange = (type, value) => {
         setFilter(prevFilter => ({ ...prevFilter, [type]: value }));
@@ -37,36 +38,35 @@ const DiscoverProducts = () => {
                             <h4>Americana</h4>
                         </div>
                         <div className="feature">
-                        <img src={imgComidaChina} alt="China" onClick={() => handleFilterChange('country', 'China')} />
+                            <img src={imgComidaChina} alt="China" onClick={() => handleFilterChange('country', 'China')} />
                             <h4>China</h4>
                         </div>
                         <div className="feature">
-                        <img src={imgComidaKoreana} alt="Coreana" onClick={() => handleFilterChange('country', 'Korea')} />
+                            <img src={imgComidaKoreana} alt="Coreana" onClick={() => handleFilterChange('country', 'Korea')} />
                             <h4>Koreana</h4>
                         </div>
                         <div className="feature">
-                        <img src={imgComidaEspañola} alt="Española" onClick={() => handleFilterChange('country', 'Spain')} />
+                            <img src={imgComidaEspañola} alt="Española" onClick={() => handleFilterChange('country', 'Spain')} />
                             <h4>Española</h4>
                         </div>
                         <div className="feature">
-                        <img src={imgComidaIndia} alt="India" onClick={() => handleFilterChange('country', 'India')} />
+                            <img src={imgComidaIndia} alt="India" onClick={() => handleFilterChange('country', 'India')} />
                             <h4>India</h4>
                         </div>
                         <div className="feature">
-                        <img src={imgComidaItaliana} alt="Italiana" onClick={() => handleFilterChange('country', 'Italia')} />
+                            <img src={imgComidaItaliana} alt="Italiana" onClick={() => handleFilterChange('country', 'Italia')} />
                             <h4>Italiana</h4>
                         </div>
                         <div className="feature">
-                        <img src={imgComidaJaponesa} alt="Japonesa" onClick={() => handleFilterChange('country', 'Japan')} />
+                            <img src={imgComidaJaponesa} alt="Japonesa" onClick={() => handleFilterChange('country', 'Japan')} />
                             <h4>Japonesa</h4>
                         </div>
                         <div className="feature">
-                        <img src={imgComidaMexicana} alt="Mexicana" onClick={() => handleFilterChange('country', 'Mexico')} />
+                            <img src={imgComidaMexicana} alt="Mexicana" onClick={() => handleFilterChange('country', 'Mexico')} />
                             <h4>Mexicana</h4>
                         </div>
                     </div>
                 </div>
-
             </div>
             <div className="restaurant-grid">
                 {filteredRestaurants.map(restaurant => (
@@ -79,6 +79,7 @@ const DiscoverProducts = () => {
                             <p>{restaurant.deliveryTime} min</p>
                             <p>${restaurant.price}</p>
                         </div>
+                        <button className="view-product-button" onClick={() => navigate(`/viewproducts/${restaurant.id}`)}>ver productos</button>
                     </div>
                 ))}
             </div>
