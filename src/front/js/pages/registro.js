@@ -99,7 +99,7 @@ export const Registro = () => {
 							{errors.name && <div className="text-danger">{errors.name}</div>}
 						</div>
 						<div className="mb-3">
-							<label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+							<label htmlFor="exampleInputEmail1" className="form-label">Correo Eléctronico</label>
 							<input
 								type="email"
 								className="form-control"
@@ -107,12 +107,12 @@ export const Registro = () => {
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
 							/>
-							<div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+							<div id="emailHelp" className="form-text">Nunca compartiremos tu email.</div>
 							{errors.email && <div className="text-danger">{errors.email}</div>}
 						</div>
 						<div className="mb-3">
 							<label htmlFor="exampleInputPassword1" className="form-label">
-								Password <a className="text" href="/resetPassword">¿Olvidaste tu contraseña?</a>
+								Contraseña <a className="text" href="/resetPassword">¿Olvidaste tu contraseña?</a>
 							</label>
 							<input
 								type="password"
@@ -121,7 +121,21 @@ export const Registro = () => {
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
 							/>
-							<div id="passwordHelp" className="form-text">We'll never share your password with anyone else.</div>
+							<div id="emailHelp" className="form-text">Nunca compartiremos tu contraseña.</div>
+							{errors.password && <div className="text-danger">{errors.password}</div>}
+						</div>
+						<div className="mb-3">
+							<label htmlFor="exampleInputPassword1" className="form-label">
+								Confirmar Contraseña <a className="text" href="/resetPassword">¿Olvidaste tu contraseña?</a>
+							</label>
+							<input
+								type="password"
+								className="form-control"
+								id="exampleInputPassword1"
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
+							/>
+							<div id="emailHelp" className="form-text">Nunca compartiremos tu contraseña.</div>
 							{errors.password && <div className="text-danger">{errors.password}</div>}
 						</div>
 						<div className="mb-3">

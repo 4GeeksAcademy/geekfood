@@ -41,8 +41,8 @@ const UserProfile = () => {
                   <i className="bi bi-credit-card"></i>
                   <span>{method.type}</span>
                   <span className="card-number">{method.number}</span>
-                  <i 
-                    className="bi bi-trash3 delete-icon" 
+                  <i
+                    className="bi bi-trash3 delete-icon"
                     onClick={() => handleDeleteMethod(method.id)}
                   ></i>
                 </div>
@@ -72,11 +72,13 @@ const UserProfile = () => {
           </div>
         );
       case 'ultimasOrdenes':
-        return <div><h2>Últimas órdenes</h2></div>;
+        return <div className='lastOrden'>
+          <h3>Últimas órdenes</h3>
+        </div>;
       case 'seguridad':
         return (
           <div className="security-form">
-            <h3 className="security-title">Cambiar contraseña</h3>
+            <h2 className="security-title">Cambiar contraseña</h2>
             <div className="form-group">
               <label htmlFor="currentPassword">Contraseña actual</label>
               <input type="password" id="currentPassword" className="form-control" />
@@ -136,7 +138,7 @@ const UserProfile = () => {
       case 'resenasValoraciones':
         return (
           <div className="reviews-section">
-            <h3 className="security-title">Experiencias de nuestros clientes</h3>
+            <h2 className="security-title">Experiencias de nuestros clientes</h2>
             <div className="stars">
               {[1, 2, 3, 4, 5].map(star => (
                 <i
