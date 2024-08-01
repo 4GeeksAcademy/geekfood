@@ -1,0 +1,43 @@
+export const dishes = () => [
+    {
+        id: 1,
+        name: 'Super Duo',
+        description: '(1) Sub b.m.t 15 cm + (1) sub pizza 15cm.',
+        price: 6500,
+        imgSrc: 'd1_super_duo.png',
+        restaurantId: 1,
+        restaurantName: 'Subway',
+        discount: '22%',
+    },
+    {
+        id: 2,
+        name: 'Sub Del Día Lunes',
+        description: '(1) Sub Salame tomate 15cm',
+        price: 3850,
+        imgSrc: 'd1_sub_del_dia_lunes.png',
+        restaurantId: 1,
+        restaurantName: 'Subway',
+        discount: '15%',
+    },
+    {
+        id: 3,
+        name: 'Footlover',
+        description: '(1) Sub atún footlong 30 cm + (1) bebida de lata.',
+        price: 8450,
+        imgSrc: 'd1_footlover.png',
+        restaurantId: 1,
+        restaurantName: 'Subway',
+        discount: '27%',
+    },
+    {
+        id: 4,
+        name: 'Date Un Gusto',
+        description: '(1) Sub pollo asado 15cm + (1) galleta.',
+        price: 5900,
+        imgSrc: 'd1_date_un_gusto.png',
+        restaurantId: 1,
+        restaurantName: 'Subway',
+        discount: '30%',
+    },
+    // Agrega más platos aquí según sea necesario...incorpar tambien la imagen en src/front/img, debe tener el mismo nombre en imgSrc
+];

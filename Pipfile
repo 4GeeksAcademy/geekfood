@@ -18,9 +18,13 @@ gunicorn = "*"
 cloudinary = "*"
 flask-admin = "*"
 typing-extensions = "*"
+<<<<<<< HEAD
+flask-mail = "*"
+=======
 pipenv = "*"
 migrate = "*"
 cors = "*"
+flask-jwt-extended = "*"
 
 [requires]
 python_version = "3.10"

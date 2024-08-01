@@ -1,4 +1,63 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { dishes } from '../component/dishes';
+import '../../styles/productDetail.css';
+
+const ProductDetail = ({ addToCart }) => {
+    const { dishId } = useParams();
+    const dish = dishes().find(d => d.id === parseInt(dishId));
+    const [quantity, setQuantity] = useState(1);
+    const navigate = useNavigate();
+
+    const handleAddToCart = () => {
+        addToCart({ ...dish, quantity: parseInt(quantity) });
+    };
+
+    return (
+        <div className="product-detail-container">
+            <div className="product-detail-content">
+                <div className="product-image-section">
+                    <img src={require(`../../img/${dish.imgSrc}`).default} alt={dish.name} className="main-image" />
+                    <div className="thumbnail-images">
+                        {/*<img src={require(`../../img/${dish.imgSrc}`).default} alt={dish.name} />
+                        <img src={require(`../../img/${dish.imgSrc}`).default} alt={dish.name} />
+                        <img src={require(`../../img/${dish.imgSrc}`).default} alt={dish.name} /> */}
+                        {/* aca agregar mas imagenes que esten disponibles */}
+                    </div>
+                </div>
+                <div className="product-info-section">
+                    <h2>{dish.name}</h2>
+                    <p className="price">${dish.price}</p>
+                    <div className="tabs">
+                        <span className="active-tab">Detalle</span>
+                        <span>Caracteristicas</span>
+                        <span>Ingredientes</span>
+                    </div>
+                    <p>{dish.description}</p>
+                    <div className="quantity-section">
+                        <label htmlFor="quantity">Cantidad</label>
+                        <select id="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div className="buttons-section">
+                        <button className="add-to-cart-button" onClick={() => { handleAddToCart(); navigate('/product_americano'); }}>Agregar y seguir comprando</button>
+                        <button className="buy-now-button" onClick={() => { handleAddToCart(); navigate('/resumebuy'); }}>Agregar e ir a pagar</button>
+                    </div>
+                    <p className="free-shipping">Envío gratis sobre $50.000</p>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default ProductDetail;
+
+
+
+/* import React, { useState } from "react";
 
 export const ProductDetail = () => {
     const images = [
@@ -12,11 +71,11 @@ export const ProductDetail = () => {
 
     const renderContent = () => {
         switch (activeTab) {
-            case 'tab1': /* detalle */
+            case 'tab1': 
                 return <p className="mt-4">Exquisito platillo italiano donde podrás deleitar una variedad de sabores en tu paladar.</p>;
-            case 'tab2': /* caracteristicas */
+            case 'tab2': 
                 return <p className="mt-4">Este platillo se entrega gratinado con queso mozzarella, pan con mantequilla de ajo y servicios.</p>;
-            case 'tab3': /* ingredientes */
+            case 'tab3': 
                 return <ul className="mt-4">
                     <li>Lechuga</li>
                     <li>Tomate</li>
@@ -106,4 +165,4 @@ export const ProductDetail = () => {
             </div>
         </div>
     )
-};
+}; */

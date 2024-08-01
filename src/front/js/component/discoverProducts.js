@@ -8,6 +8,7 @@ import imgComidaIndia from '../../img/comida_india.png';
 import imgComidaItaliana from '../../img/comida_italiana.png';
 import imgComidaJaponesa from '../../img/comida_japonesa.png';
 import imgComidaMexicana from '../../img/comida_mexicana.png';
+import { Link } from 'react-router-dom';
 
 export const DiscoverProducts = () => {
     return (
@@ -51,7 +52,7 @@ export const DiscoverProducts = () => {
                         <h4>Mexicana</h4>
                     </div>
                 </div>
-                <button className="view-product-button" onClick={() => navigate('/')}>Revisa aca nuestros deliciosos platos</button>
+                <Link to="/product_americano" className="btn btn-secondary w-75">Revisa acá nuestros deliciosos platos</Link>
             </div>
         </div>
     );
