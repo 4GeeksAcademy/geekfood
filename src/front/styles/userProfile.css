@@ -176,7 +176,7 @@ body {
     font-size: 25px;
     margin-bottom: 20px;
     margin-top: -15px;
-    color: #ff6600; 
+    color: rgb(253, 141, 20); 
 }
 
 .stars {
@@ -209,7 +209,7 @@ body {
     width: auto;
     padding: 10px 20px;
     margin-top: 10px;
-    background-color: #ff6600; 
+    background-color: rgb(253, 141, 20); 
     color: white;
     border: none;
     border-radius: 4px;
@@ -220,3 +220,5 @@ body {
     background-color: black; 
     color: white;
 }
+
+
