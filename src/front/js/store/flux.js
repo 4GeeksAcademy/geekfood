@@ -66,21 +66,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			changeColor: (index, color) => {
-				// Obtener el store
-				const store = getStore();
 
-				// Actualizar el color en el array demo
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				// Actualizar el store global
-				setStore({ demo: demo });
-			},
-
-			// Otras acciones...
 		}
 	};
 };

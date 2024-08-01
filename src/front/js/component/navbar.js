@@ -43,14 +43,14 @@ export const Navbar = ({ cart }) => {
                         !!store.currentUser ? (
                             <>
                                 <div className="d-flex me-2">
-                                    <div class="dropdown">
-                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div className="dropdown">
+                                        <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             {store.currentUser?.email}
                                         </a>
 
-                                        <ul class="dropdown-menu">
-                                            <li><Link class="dropdown-item" to="/userProfile">Perfil</Link></li>
-                                            <li><button class="dropdown-item" onClick={actions.logout}>Salir</button></li>
+                                        <ul className="dropdown-menu">
+                                            <li><Link className="dropdown-item" to="/userProfile">Perfil</Link></li>
+                                            <li><button className="dropdown-item" onClick={actions.logout}>Salir</button></li>
                                         </ul>
                                     </div>
                                 </div>

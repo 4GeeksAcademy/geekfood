@@ -1,25 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext"; // Ajusta la ruta según tu configuración
 import imgLogin from "../../img/register.png";
 import "../../styles/login.css";
+import { useNavigate } from "react-router-dom";
 
 export const Registro = () => {
-	const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [errors, setErrors] = useState({});
+	const { actions } = useContext(Context)
+	const [name, setName] = useState('')
+	const [username, setUsername] = useState('')
+	const [password, setPassword] = useState('')
+	const [confirmPassword, setConfirmPassword] = useState('')
+	const [show, setShow] = useState(false)
 
 	const validateForm = () => {
 		let formErrors = {};
 		let isValid = true;
 
 		// Validar el campo de nombre
-		if (!name) {
+		if (name === '') {
 			formErrors.name = "El campo de nombres es obligatorio";
 			isValid = false;
 		}
 
 		// Validar el campo de email
-		if (!email) {
+		if (email === '') {
 			formErrors.email = "El campo de email es obligatorio";
 			isValid = false;
 		} else if (!/\S+@\S+\.\S+/.test(email)) {
@@ -28,7 +32,7 @@ export const Registro = () => {
 		}
 
 		// Validar el campo de password
-		if (!password) {
+		if (password === '') {
 			formErrors.password = "El campo de contraseña es obligatorio";
 			isValid = false;
 		} else if (password.length < 6) {
