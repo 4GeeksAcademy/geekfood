@@ -9,9 +9,11 @@ export const Footer = () => (
         <div className="col-md-6 ">
           {/*           <a href="/"><img src={icon} alt="icon" className="navbar-icon" /></a>
  */}          <p>Únete a nuestro boletín para mantenerte al día de las características y lanzamientos.</p>
-          <div className="newsletter-form">
-            <input type="email" placeholder="Ingresa tu correo" className="newsletter-input" />
-            <button className="newsletter-button btn">Suscríbete</button>
+          <div className="newsletter-formm">
+            <input type="email" placeholder="Ingresa tu correo" className="newsletter-inputt" />
+          </div>
+          <div className="">
+            <button className="btn" href="/suscription">Suscríbete</button>
           </div>
           <small>
             Al suscribirte, aceptas nuestra Política de Privacidad y das tu consentimiento para recibir actualizaciones de nuestra empresa.

@@ -4,10 +4,8 @@ body {
 
 .user-profile-container {
     display: flex;
-    height: calc(100vh - 60px);
-    /* Ajuste para tener en cuenta el espacio superior e inferior */
-    padding: 30px 20px;
-    /* Espacio superior e inferior */
+    height: calc(100vh - 60px); 
+    padding: 30px 20px; 
     box-sizing: border-box;
 }
 
@@ -28,18 +26,23 @@ body {
 }
 
 .profile img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 .nav-link {
     color: #333;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 20px; 
+    display: block; 
+    text-decoration: none; 
 }
 
 .nav-link:hover {
-    color: #007bff;
+    color: rgb(243, 117, 44);
 }
 
 .main-content {
@@ -59,12 +62,11 @@ body {
     align-items: center;
 }
 
-.saved-methods,
-.new-method {
-    width: 50%;
-    /* Reducir el tamaño de las cajas al 50% del ancho original */
-    margin-bottom: 10px;
-    /* Añadir margen inferior para la separación */
+.saved-methods {
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .saved-method {
@@ -76,8 +78,8 @@ body {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 5px;
-    /* Reducir el espacio entre los elementos */
+    margin-bottom: 10px; 
+    width: 100%; 
 }
 
 .saved-method i {
@@ -89,10 +91,17 @@ body {
     font-weight: bold;
 }
 
+.delete-icon {
+    font-size: 1.2rem !important;
+    color: red;
+    cursor: pointer;
+}
+
 .new-method {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 50%; 
 }
 
 .new-method h3 {
@@ -105,39 +114,46 @@ body {
     width: 100%;
 }
 
-.new-method .form-control {
+.form-control {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
+    padding: 8px;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-.new-method .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
+.btn {
+    background-color: rgb(243, 117, 44);
+    color: black;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
 }
 
-.new-method .btn:hover {
-    background-color: #0056b3;
+.btn:hover {
+    background-color: black;
+}
+
+.security-form .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.security-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 .divider {
     width: 100%;
-    border-top: 1px solid #ddd;
+    height: 1px;
+    background-color: #ddd;
     margin: 20px 0;
 }
 
 .order-status {
     font-size: 1.25rem;
-    /* Tamaño de fuente más grande */
     font-weight: bold;
-    /* Negrita */
     position: absolute;
     top: 10px;
     right: 10px;

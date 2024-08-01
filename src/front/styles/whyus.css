@@ -1,0 +1,41 @@
+.wu-container {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+h2 {
+    font-family: "Rakkas", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fd8d14;
+}
+
+.iconn {
+    color: #fd8d14;
+}
+
+.wu-container {
+    max-width: 1200px;
+    /* Ajusta este valor según tus necesidades */
+    margin: 0 auto;
+    /* Centra el contenedor */
+    padding: 0 15px;
+    /* Añade un pequeño padding para que el contenido no toque los bordes */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-4 {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.mx-auto {
+    margin-right: auto;
+    margin-left: auto;
+}

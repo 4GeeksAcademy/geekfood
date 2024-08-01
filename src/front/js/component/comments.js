@@ -1,6 +1,7 @@
 // src/front/js/component/Comentarios.js
 import React, { useState } from 'react';
 import StarRating from './starRating';
+import '../../styles/comments.css';
 
 export const Comentarios = () => {
   const [commentText, setCommentText] = useState("");

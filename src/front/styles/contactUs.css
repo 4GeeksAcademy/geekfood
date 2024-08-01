@@ -3,18 +3,22 @@
     background-color: white;
     padding: 20px;
   }
-  
+
   h1 {
     font-weight: bold;
   }
-  
-  .btn-dark {
-    background-color: black;
-    border-color: black;
+
+  .btn {
+    background-color: #fd8d14;
+    color: #000000;
+    border: #ffffff;
+    font-family: "Nunito", serif;
+    font-weight: 300;
+    font-style: normal;
+    border-radius: 4px;
   }
-  
-  .btn-dark:hover {
-    background-color: #333;
-    border-color: #333;
+
+  .btn:hover {
+    background-color: #000000;
+    color: #ffffff;
   }
-  
