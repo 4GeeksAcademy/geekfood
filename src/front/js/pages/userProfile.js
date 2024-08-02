@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "../../styles/userProfile.css";
 import perfil from '../../img/profilePhoto.jpg';
+import { Context } from '../store/appContext';
+import { useNavigate } from 'react-router-dom';
+
 
 const UserProfile = () => {
+  const { store, actions } = useContext(Context)
+  const navigate = useNavigate()
+
+  //metodos de pago
+  const [newCardNumber, setNewCardNumber] = useState('');
+  const [newCardName, setNewCardName] = useState('');
+  const [newExpDate, setNewExpDate] = useState('');
+  const [newCVV2, setNewCVV2] = useState('');
+
+  //informacion del usuario
   const [activeTab, setActiveTab] = useState('infoCuenta');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -12,15 +25,48 @@ const UserProfile = () => {
     { id: 2, type: 'Mastercard', number: '•••• 2329' },
     { id: 3, type: 'American Express', number: '•••• 2314' },
   ]);
+
+  // ratings 
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [review, setReview] = useState('');
   const [isEditingName, setIsEditingName] = useState(false);
   const [name, setName] = useState('David Nazariego');
 
-  const handleDeleteMethod = (id) => {
-    setSavedMethods(savedMethods.filter(method => method.id !== id));
-  };
+  useEffect(() => {
+    if (store.access_token !== null) {
+      actions.perfil();
+    } else {
+      navigate('/login');
+    }
+  }, [store.access_token, navigate]);
+
+  useEffect(() => {
+    if (store.profile) {
+      setName(store.profile.name);
+      setPhoneNumber(store.profile.phone);
+      // Otros datos que quieras mostrar
+
+    }
+  }, [store.profile]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const datos = {
+      name: name,
+      phone: phoneNumber,
+      // Otros datos que quieras actualizar
+    };
+
+
+    const resp = await actions.UpdatePerfil(datos)
+    if (resp.status === 'success') {
+      success(resp.message)
+    } else {
+      error(resp.message)
+    }
+  }
 
   const orders = [
     {
@@ -60,70 +106,140 @@ const UserProfile = () => {
     }
   };
 
+  //metodos de pago 
+  useEffect(() => {
+    if (store.access_token !== null) {
+      actions.getAllPaymentMethods();
+    } else {
+      navigate('/login');
+    }
+  }, [store.access_token]);
+
+  // Actualiza `savedMethods` al cambiar `store.paymentMethods`
+  useEffect(() => {
+    if (store.paymentMethods) {
+      setSavedMethods(store.paymentMethods);
+    }
+  }, [store.paymentMethods]);
+
+  // Maneja la creación de un nuevo método de pago
+  const handleSaveNewMethod = async () => {
+    const newMethod = {
+      card_number: newCardNumber,
+      card_name: newCardName,
+      exp_date: newExpDate,
+      cvv2: newCVV2,
+    };
+
+    const resp = await actions.createPaymentMethod(newMethod);
+    if (resp.status === 'success') {
+      success(resp.message);
+    } else {
+      error(resp.message);
+    }
+
+    // Limpia los campos después de agregar
+    setNewCardNumber('');
+    setNewCardName('');
+    setNewExpDate('');
+    setNewCVV2('');
+  };
+
+  // Maneja la eliminación de un método de pago
+  const handleDeleteMethod = async (id) => {
+    const resp = await actions.deletePaymentMethod(id);
+    if (resp.status === 'success') {
+      toast.success(resp.message);
+    } else {
+      toast.error(resp.message);
+    }
+  };
+
   const renderContent = () => {
     switch (activeTab) {
+      //info cuenta
       case 'infoCuenta':
         return (
+
           <div className="info-basic">
             <h3>Información básica</h3>
-            <p>
-              <strong>Nombre: </strong>
-              {isEditingName ? (
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label>Nombre:</label>
+                {isEditingName ? (
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    onBlur={() => setIsEditingName(false)}
+                    autoFocus
+                  />
+                ) : (
+                  <>
+                    {name} <i className="bi bi-pen" onClick={() => setIsEditingName(true)}></i>
+                  </>
+                )}
+              </div>
+              <div>
+                <label>Número de teléfono:</label>
                 <input
                   type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  onBlur={() => setIsEditingName(false)}
-                  autoFocus
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                 />
-              ) : (
-                <>
-                  {name} <i className="bi bi-pen" onClick={() => setIsEditingName(true)}></i>
-                </>
-              )}
-            </p>
-            <p><strong>Número de teléfono:</strong> +12345678987</p>
-            <p><strong>Email:</strong> hola@gmail.com</p>
+              </div>
+              <div>
+                <label>Email:</label>
+                <p>{store?.profile?.email}</p>
+              </div>
+              <button type="submit" className='btn'>Guardar cambios</button>
+            </form>
           </div>
         );
+      //metodos de pago
       case 'mediosPago':
         return (
-          <div className="payment-methods">
-            <h3>Medios de pagos agregados</h3>
-            <div className="saved-methods">
-              {savedMethods.map(method => (
-                <div key={method.id} className="saved-method">
-                  <i className="bi bi-credit-card"></i>
-                  <span>{method.type}</span>
-                  <span className="card-number">{method.number}</span>
-                  <i
-                    className="bi bi-trash3 delete-icon"
-                    onClick={() => handleDeleteMethod(method.id)}
-                  ></i>
+          <div className="container-fluid">
+            {/* agregar metodos de pago */}
+            <section className="col-md-6 w-100">
+              <div className="new-method">
+                <h3>Agregar un nuevo medio de pago</h3>
+                <div className="form-group">
+                  <label htmlFor="cardNumber">Card number</label>
+                  <input type="text" id="cardNumber" className="form-control" value={newCardNumber} onChange={(e) => setNewCardNumber(e.target.value)} />
                 </div>
-              ))}
-            </div>
-            <div className="divider"></div>
-            <div className="new-method">
-              <h3>Agregar un nuevo medio de pago</h3>
-              <div className="form-group">
-                <label htmlFor="cardNumber">Card number</label>
-                <input type="text" id="cardNumber" className="form-control" />
+                <div className="form-group">
+                  <label htmlFor="nameOnCard">Name on card</label>
+                  <input type="text" id="nameOnCard" className="form-control" value={newCardName} onChange={(e) => setNewCardName(e.target.value)} />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="cvv2">CVV2</label>
+                  <input type="text" id="cvv2" className="form-control" value={newCVV2} onChange={(e) => setNewCVV2(e.target.value)} />
+                </div>
+                <button onClick={handleSaveNewMethod} className="btn btn-primary">Save New Method</button>
               </div>
-              <div className="form-group">
-                <label htmlFor="nameOnCard">Name on card</label>
-                <input type="text" id="nameOnCard" className="form-control" />
+            </section >
+
+            {/* metodos de pago */}
+            <section className="col-md-6 w-100">
+              <div className="payment-methods">
+                <h3>Medios de pagos agregados</h3>
+                <div className="saved-methods">
+                  {savedMethods.map(method => (
+                    <div key={method.id} className="saved-method">
+                      <i className="bi bi-credit-card"></i>
+                      <span>{method.type}</span>
+                      <span className="card-number">{method.number}</span>
+                      <i
+                        className="bi bi-trash3 delete-icon"
+                        onClick={() => handleDeleteMethod(method.id)}
+                      ></i>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="form-group">
-                <label htmlFor="expDate">Exp Date</label>
-                <input type="text" id="expDate" className="form-control" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="cvv2">CVV2</label>
-                <input type="text" id="cvv2" className="form-control" />
-              </div>
-              <button className="btn">Guardar</button>
-            </div>
+            </section>
+
           </div>
         );
       case 'ultimasOrdenes':
@@ -323,4 +439,3 @@ const UserProfile = () => {
 };
 
 export default UserProfile;
-``
