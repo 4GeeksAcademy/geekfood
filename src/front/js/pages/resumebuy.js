@@ -41,6 +41,7 @@ const ResumeBuy = ({ cart, updateCart, removeFromCart }) => {
                     </div>
                 ))}
             </div>
+
             <div className="summary">
                 <h3>Resumen de la compra</h3>
                 <p>Productos: ${totalPrice}</p>
