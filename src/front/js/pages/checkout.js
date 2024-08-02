@@ -5,11 +5,13 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import '../../styles/checkout.css';
 import Address from '../component/address';
 import PaymentInstrument from '../component/paymentinstrument';
+import { useCart } from '../component/cart'; 
 
 const Checkout = () => {
     const location = useLocation();
-    const { cart, totalPrice, restaurantName, restaurantImgSrc } = location.state; 
+    const { cart, totalPrice, restaurantName, restaurantImgSrc } = location.state;
     const navigate = useNavigate();
+    const { setCart } = useCart(); 
     const [showAddressModal, setShowAddressModal] = useState(false);
     const [showPaymentModal, setShowPaymentModal] = useState(false);
     const [address, setAddress] = useState("");
@@ -26,13 +28,14 @@ const Checkout = () => {
     };
 
     const handleOrder = () => {
+        setCart([]);
         navigate('/invoice', {
             state: {
-                cart: cart, 
-                totalPrice: totalPrice, 
+                cart: cart,
+                totalPrice: totalPrice,
                 restaurant: { name: restaurantName, imgSrc: restaurantImgSrc },
-                address: address, 
-                paymentMethod: paymentMethod 
+                address: address,
+                paymentMethod: paymentMethod
             }
         });
     };
@@ -44,13 +47,23 @@ const Checkout = () => {
             <p>Dirección: {address || "Ingresar dirección"}</p>
             <button className="btn btn-outline-secondary" onClick={() => setAddress("")}>Eliminar</button>
 
-            {showAddressModal && <Address onSubmit={handleAddressSubmit} />}
+            {showAddressModal && (
+                <Address
+                    onSubmit={handleAddressSubmit}
+                    onClose={() => setShowAddressModal(false)}
+                />
+            )}
 
             <h2>Medios de pago</h2>
             <button className="btn btn-outline-secondary" onClick={() => setShowPaymentModal(true)}>Elegir medio de pago</button>
-            <p>{paymentMethod || "Seleccionar metodo de pago"}</p>
+            <p>{paymentMethod || "Seleccionar método de pago"}</p>
 
-            {showPaymentModal && <PaymentInstrument onSubmit={handlePaymentSubmit} />}
+            {showPaymentModal && (
+                <PaymentInstrument
+                    onSubmit={handlePaymentSubmit}
+                    onClose={() => setShowPaymentModal(false)}
+                />
+            )}
 
             <div className="summary">
                 <h3>Resumen de la compra</h3>

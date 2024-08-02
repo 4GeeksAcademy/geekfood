@@ -1,8 +1,15 @@
-// src/front/js/component/cart.js
+// src/front/js/component/cartContext.js
 
-import { useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-export const useCart = () => {
+// Crea el contexto
+const CartContext = createContext();
+
+// Hook para utilizar el contexto
+export const useCart = () => useContext(CartContext);
+
+// Proveedor del contexto
+export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const addToCart = (dish) => {
@@ -22,11 +29,9 @@ export const useCart = () => {
         setCart(cart.map(item => item.id === id ? { ...item, quantity: item.quantity + delta } : item));
     };
 
-    return {
-        cart,
-        setCart,
-        addToCart,
-        removeFromCart,
-        updateCart
-    };
+    return (
+        <CartContext.Provider value={{ cart, setCart, addToCart, removeFromCart, updateCart }}>
+            {children}
+        </CartContext.Provider>
+    );
 };

@@ -1,3 +1,5 @@
+// src/front/js/pages/resumebuy.js
+
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/resumebuy.css';
@@ -8,6 +10,10 @@ const ResumeBuy = ({ cart, updateCart, removeFromCart }) => {
 
     const handleRemove = (id) => {
         removeFromCart(id);
+    };
+
+    const handleQuantityChange = (id, delta) => {
+        updateCart(id, delta);
     };
 
     const handleContinue = () => {
@@ -37,8 +43,7 @@ const ResumeBuy = ({ cart, updateCart, removeFromCart }) => {
             </div>
             <div className="summary">
                 <h3>Resumen de la compra</h3>
-                <p>Productos {/* ({cart.length}) */}: ${totalPrice}</p>
-                {/* <p>Descuentos: $0</p> */}
+                <p>Productos: ${totalPrice}</p>
                 <p>Total cargos: $3500</p>
                 <p>Total: ${totalPrice + 3500}</p>
                 <button className="btn btn-outline-secondary btn-sm continue-buying" onClick={handleContinue}>Continuar compra</button>
