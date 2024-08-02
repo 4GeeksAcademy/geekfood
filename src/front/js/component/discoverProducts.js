@@ -20,35 +20,35 @@ export const DiscoverProducts = () => {
                 </p>
                 <div className="product-features">
                     <div className="feature">
-                        <img src={imgComidaAmericana} alt="Americana" />
+                        <img src={imgComidaAmericana} className="rounded-image" alt="Americana" />
                         <h4>Americana</h4>
                     </div>
                     <div className="feature">
-                        <img src={imgComidaChina} alt="China" />
+                        <img src={imgComidaChina} className="rounded-image" alt="China" />
                         <h4>China</h4>
                     </div>
                     <div className="feature">
-                        <img src={imgComidaKoreana} alt="Coreana" />
+                        <img src={imgComidaKoreana} className="rounded-image" alt="Coreana" />
                         <h4>Coreana</h4>
                     </div>
                     <div className="feature">
-                        <img src={imgComidaEspañola} alt="Española" />
+                        <img src={imgComidaEspañola} className="rounded-image" alt="Española" />
                         <h4>Española</h4>
                     </div>
                     <div className="feature">
-                        <img src={imgComidaIndia} alt="India" />
+                        <img src={imgComidaIndia} className="rounded-image" alt="India" />
                         <h4>India</h4>
                     </div>
                     <div className="feature">
-                        <img src={imgComidaItaliana} alt="Italiana" />
+                        <img src={imgComidaItaliana} className="rounded-image" alt="Italiana" />
                         <h4>Italiana</h4>
                     </div>
                     <div className="feature">
-                        <img src={imgComidaJaponesa} alt="Japonesa" />
+                        <img src={imgComidaJaponesa} className="rounded-image" alt="Japonesa" />
                         <h4>Japonesa</h4>
                     </div>
                     <div className="feature">
-                        <img src={imgComidaMexicana} alt="Mexicana" />
+                        <img src={imgComidaMexicana} className="rounded-image" alt="Mexicana" />
                         <h4>Mexicana</h4>
                     </div>
                 </div>
