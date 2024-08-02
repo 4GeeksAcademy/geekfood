@@ -14,13 +14,13 @@ const UserProfile = () => {
   const { store, actions } = useContext(Context)
   const navigate = useNavigate()
 
-  //metodos de pago
+
   const [newCardNumber, setNewCardNumber] = useState('');
   const [newCardName, setNewCardName] = useState('');
   const [newExpDate, setNewExpDate] = useState('');
   const [newCVV2, setNewCVV2] = useState('');
 
-  //informacion del usuario
+
   const [activeTab, setActiveTab] = useState('infoCuenta');
   const [name, setName] = useState('David');
 
@@ -49,7 +49,7 @@ const UserProfile = () => {
           <div className="profile text-center">
             <img src={perfil} alt="Perfil" className="img-fluid rounded-circle" />
             <h4>Mi perfil</h4>
-            <p>{name}</p> {/* Aquí se muestra el nombre dinámicamente */}
+            <p>{name}</p> {}
           </div>
           <a
             href="#"
