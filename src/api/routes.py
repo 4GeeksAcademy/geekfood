@@ -111,6 +111,25 @@ def profile():
     
     return jsonify(user.profile.serialize()), 200
 
+@api.route('/profile', methods=['PUT'])
+@jwt_required()
+def update_profile():
+    id = get_jwt_identity()
+    user = User.query.get_or_404(id)
+    data = request.json
+
+    if user.profile:
+        profile = user.profile
+    else:
+        profile = Profile(user_id=id)
+    
+    profile.name = data.get('name', profile.name)
+    profile.phone = data.get('phone', profile.phone)
+    profile.address = data.get('address', profile.address)
+    
+    profile.save()
+
+    return jsonify(profile.serialize()), 200
 
 
 #USERS ADMIN
@@ -275,3 +294,29 @@ def delete_paymentMethod_by_id(payment_id):
     db.session.commit()
     return jsonify({"message": "Método de pago eliminado exitosamente"}), 200
 
+#Modificar contraseña
+@api.route('/change-password', methods=['PUT'])
+@jwt_required()
+def change_password():
+    current_user = get_jwt_identity()
+    data = request.get_json()
+
+    current_password = data.get('currentPassword')
+    new_password = data.get('newPassword')
+    confirm_password = data.get('confirmPassword')
+
+    if not current_password or not new_password or not confirm_password:
+        return jsonify({"msg": "All fields are required!"}), 400
+
+    if new_password != confirm_password:
+        return jsonify({"msg": "New password and confirm password do not match!"}), 400
+
+    user = User.query.filter_by(email=current_user).first()
+
+    if not user or not check_password_hash(user.password, current_password):
+        return jsonify({"msg": "Current password is incorrect!"}), 400
+
+    user.password = generate_password_hash(new_password)
+    user.update()
+
+    return jsonify({"msg": "Password updated successfully!"}), 200

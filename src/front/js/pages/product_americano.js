@@ -30,39 +30,39 @@ const DiscoverProducts = () => {
         <div className="discover-products-container">
             <h2>Descubre nuestra amplia variedad de restaurantes</h2>
             <button className="clear-filter" onClick={() => setFilter({ country: '', category: '' })}>Borrar Filtro</button>
-            <div className="filters">
+            <div className="filters my-1 p-2">
                 <div className="filter-section">
                     <div className="filter-options">
                         <div className="feature">
-                            <img src={imgComidaAmericana} alt="Americana" onClick={() => handleFilterChange('country', 'USA')} />
+                            <img src={imgComidaAmericana} className="rounded-image" alt="Americana" onClick={() => handleFilterChange('country', 'USA')} />
                             <h4>Americana</h4>
                         </div>
                         <div className="feature">
-                            <img src={imgComidaChina} alt="China" onClick={() => handleFilterChange('country', 'China')} />
+                            <img src={imgComidaChina} className="rounded-image" alt="China" onClick={() => handleFilterChange('country', 'China')} />
                             <h4>China</h4>
                         </div>
                         <div className="feature">
-                            <img src={imgComidaKoreana} alt="Coreana" onClick={() => handleFilterChange('country', 'Korea')} />
+                            <img src={imgComidaKoreana} className="rounded-image" alt="Coreana" onClick={() => handleFilterChange('country', 'Korea')} />
                             <h4>Koreana</h4>
                         </div>
                         <div className="feature">
-                            <img src={imgComidaEspañola} alt="Española" onClick={() => handleFilterChange('country', 'Spain')} />
+                            <img src={imgComidaEspañola} className="rounded-image" alt="Española" onClick={() => handleFilterChange('country', 'Spain')} />
                             <h4>Española</h4>
                         </div>
                         <div className="feature">
-                            <img src={imgComidaIndia} alt="India" onClick={() => handleFilterChange('country', 'India')} />
+                            <img src={imgComidaIndia} className="rounded-image" alt="India" onClick={() => handleFilterChange('country', 'India')} />
                             <h4>India</h4>
                         </div>
                         <div className="feature">
-                            <img src={imgComidaItaliana} alt="Italiana" onClick={() => handleFilterChange('country', 'Italia')} />
+                            <img src={imgComidaItaliana} className="rounded-image" alt="Italiana" onClick={() => handleFilterChange('country', 'Italia')} />
                             <h4>Italiana</h4>
                         </div>
                         <div className="feature">
-                            <img src={imgComidaJaponesa} alt="Japonesa" onClick={() => handleFilterChange('country', 'Japan')} />
+                            <img src={imgComidaJaponesa} className="rounded-image" alt="Japonesa" onClick={() => handleFilterChange('country', 'Japan')} />
                             <h4>Japonesa</h4>
                         </div>
                         <div className="feature">
-                            <img src={imgComidaMexicana} alt="Mexicana" onClick={() => handleFilterChange('country', 'Mexico')} />
+                            <img src={imgComidaMexicana} className="rounded-image" alt="Mexicana" onClick={() => handleFilterChange('country', 'Mexico')} />
                             <h4>Mexicana</h4>
                         </div>
                     </div>
