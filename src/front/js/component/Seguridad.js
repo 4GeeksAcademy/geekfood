@@ -43,26 +43,6 @@ const Seguridad = () => {
       >
         Guardar
       </button>
-      <div className="divider"></div>
-      <h3 className="security-title">Cambiar número de teléfono</h3>
-      <div className="form-group">
-        <label htmlFor="phoneNumber">Ingresa tu nuevo número de teléfono</label>
-        <input
-          type="text"
-          id="phoneNumber"
-          className="form-control"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-        />
-      </div>
-      <button
-        className="btn"
-        onClick={() => {
-          alert('Número de teléfono actualizado.');
-        }}
-      >
-        Guardar
-      </button>
     </div>
   );
 };

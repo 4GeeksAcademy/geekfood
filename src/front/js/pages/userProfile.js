@@ -9,11 +9,12 @@ import perfil from '../../img/profilePhoto.jpg';
 
 const UserProfile = () => {
   const [activeTab, setActiveTab] = useState('infoCuenta');
+  const [name, setName] = useState('David');
 
   const renderContent = () => {
     switch (activeTab) {
       case 'infoCuenta':
-        return <InfoCuenta />;
+        return <InfoCuenta name={name} setName={setName} />;
       case 'mediosPago':
         return <MediosPago />;
       case 'ultimasOrdenes':
@@ -34,7 +35,7 @@ const UserProfile = () => {
           <div className="profile text-center">
             <img src={perfil} alt="Perfil" className="img-fluid rounded-circle" />
             <h4>Mi perfil</h4>
-            <p>David</p>
+            <p>{name}</p> {/* Aquí se muestra el nombre dinámicamente */}
           </div>
           <a
             href="#"

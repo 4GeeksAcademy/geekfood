@@ -1,31 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../styles/InfoCuenta.css';
 
-const InfoCuenta = () => {
-  const [isEditingName, setIsEditingName] = useState(false);
-  const [name, setName] = useState('David Nazariego');
-
+const InfoCuenta = ({ name, setName }) => {
+  
   return (
     <div className="info-basic">
       <h3>Información básica</h3>
-      <p>
-        <strong>Nombre: </strong>
-        {isEditingName ? (
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            onBlur={() => setIsEditingName(false)}
-            autoFocus
-          />
-        ) : (
-          <>
-            {name} <i className="bi bi-pen" onClick={() => setIsEditingName(true)}></i>
-          </>
-        )}
-      </p>
-      <p><strong>Número de teléfono:</strong> +12345678987</p>
-      <p><strong>Email:</strong> hola@gmail.com</p>
+
+      <div className="info-field">
+        <label>Nombre(s):</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)} // Actualiza el estado del nombre en UserProfile
+        />
+      </div>
+
+      <div className="info-field">
+        <label>Teléfono:</label>
+        <input
+          type="text"
+          onChange={(e) => console.log('Teléfono cambiado')} // Solo un ejemplo, puedes actualizar con más lógica
+        />
+      </div>
+
+      <div className="info-field">
+        <label>Dirección:</label>
+        <input
+          type="text"
+          onChange={(e) => console.log('Dirección cambiada')} // Solo un ejemplo, puedes actualizar con más lógica
+        />
+      </div>
+
+      <button className="save-button" onClick={() => console.log('Datos guardados')}>Guardar datos</button>
     </div>
   );
 };
