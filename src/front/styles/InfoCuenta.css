@@ -1,0 +1,14 @@
+.info-basic h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.info-basic p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.info-basic i {
+    cursor: pointer;
+    margin-left: 10px;
+}
