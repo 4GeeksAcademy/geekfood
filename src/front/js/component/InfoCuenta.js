@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../styles/InfoCuenta.css';
 
-const InfoCuenta = ({ name, setName }) => {
-  
+const InfoCuenta = ({ name, phone, address, setName, setPhone, setAddress, onSave }) => {
   return (
     <div className="info-basic">
       <h3>Información básica</h3>
@@ -12,7 +11,7 @@ const InfoCuenta = ({ name, setName }) => {
         <input
           type="text"
           value={name}
-          onChange={(e) => setName(e.target.value)} // Actualiza el estado del nombre en UserProfile
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
 
@@ -20,7 +19,8 @@ const InfoCuenta = ({ name, setName }) => {
         <label>Teléfono:</label>
         <input
           type="text"
-          onChange={(e) => console.log('Teléfono cambiado')} // Solo un ejemplo, puedes actualizar con más lógica
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
         />
       </div>
 
@@ -28,11 +28,12 @@ const InfoCuenta = ({ name, setName }) => {
         <label>Dirección:</label>
         <input
           type="text"
-          onChange={(e) => console.log('Dirección cambiada')} // Solo un ejemplo, puedes actualizar con más lógica
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
         />
       </div>
 
-      <button className="save-button" onClick={() => console.log('Datos guardados')}>Guardar datos</button>
+      <button className="save-button" onClick={onSave}>Guardar datos</button>
     </div>
   );
 };

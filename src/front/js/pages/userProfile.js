@@ -7,17 +7,50 @@ import ResenasValoraciones from '../component/ResenasValoraciones';
 import '../../styles/userProfile.css';
 import perfil from '../../img/profilePhoto.jpg';
 
-
 const UserProfile = () => {
-
-  // Información del usuario
   const [activeTab, setActiveTab] = useState('infoCuenta');
-  const [name, setName] = useState('David');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
+
+  const handleSave = async () => {
+    try {
+      const response = await fetch('/api/profile', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+        },
+        body: JSON.stringify({ name, phone, address })
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al guardar los datos');
+      }
+
+      const result = await response.json();
+      console.log('Datos guardados:', result);
+      // Opcional: Mostrar un mensaje de éxito al usuario
+    } catch (error) {
+      console.error('Error:', error);
+      // Opcional: Mostrar un mensaje de error al usuario
+    }
+  };
 
   const renderContent = () => {
     switch (activeTab) {
       case 'infoCuenta':
-        return <InfoCuenta name={name} setName={setName} />;
+        return (
+          <InfoCuenta
+            name={name}
+            phone={phone}
+            address={address}
+            setName={setName}
+            setPhone={setPhone}
+            setAddress={setAddress}
+            onSave={handleSave}
+          />
+        );
       case 'mediosPago':
         return <MediosPago />;
       case 'ultimasOrdenes':
