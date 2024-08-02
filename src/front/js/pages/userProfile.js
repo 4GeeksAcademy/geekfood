@@ -10,7 +10,6 @@ import perfil from '../../img/profilePhoto.jpg';
 
 const UserProfile = () => {
 
-  // Información del usuario
   const [activeTab, setActiveTab] = useState('infoCuenta');
   const [name, setName] = useState('David');
 

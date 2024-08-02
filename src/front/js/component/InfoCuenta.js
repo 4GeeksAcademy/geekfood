@@ -12,7 +12,7 @@ const InfoCuenta = ({ name, setName }) => {
         <input
           type="text"
           value={name}
-          onChange={(e) => setName(e.target.value)} // Actualiza el estado del nombre en UserProfile
+          onChange={(e) => setName(e.target.value)} 
         />
       </div>
 
@@ -20,7 +20,7 @@ const InfoCuenta = ({ name, setName }) => {
         <label>Teléfono:</label>
         <input
           type="text"
-          onChange={(e) => console.log('Teléfono cambiado')} // Solo un ejemplo, puedes actualizar con más lógica
+          onChange={(e) => console.log('Teléfono cambiado')} 
         />
       </div>
 
@@ -28,7 +28,7 @@ const InfoCuenta = ({ name, setName }) => {
         <label>Dirección:</label>
         <input
           type="text"
-          onChange={(e) => console.log('Dirección cambiada')} // Solo un ejemplo, puedes actualizar con más lógica
+          onChange={(e) => console.log('Dirección cambiada')} 
         />
       </div>
 
