@@ -6,13 +6,27 @@ import Seguridad from '../component/Seguridad';
 import ResenasValoraciones from '../component/ResenasValoraciones';
 import '../../styles/userProfile.css';
 import perfil from '../../img/profilePhoto.jpg';
+import { Context } from '../store/appContext';
+import { useNavigate } from 'react-router-dom';
+
 
 const UserProfile = () => {
+  const { store, actions } = useContext(Context)
+  const navigate = useNavigate()
+
+  //metodos de pago
+  const [newCardNumber, setNewCardNumber] = useState('');
+  const [newCardName, setNewCardName] = useState('');
+  const [newExpDate, setNewExpDate] = useState('');
+  const [newCVV2, setNewCVV2] = useState('');
+
+  //informacion del usuario
   const [activeTab, setActiveTab] = useState('infoCuenta');
   const [name, setName] = useState('David');
 
   const renderContent = () => {
     switch (activeTab) {
+      //info cuenta
       case 'infoCuenta':
         return <InfoCuenta name={name} setName={setName} />;
       case 'mediosPago':
