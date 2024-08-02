@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/newsletter.css";
+import { Link } from "react-router-dom";
 
 export const Newsletter = () => {
   const [email, setEmail] = useState("");
@@ -41,7 +42,7 @@ export const Newsletter = () => {
           <input type="email" placeholder="Ingresa tu correo" className="newsletter-inputt" />
         </div>
         <div className="">
-          <a className="btn" href="/suscription">Suscríbete</a>
+          <Link className="btn" to="/suscription">Suscríbete</Link>
         </div>
         <p className="newsletter-terms">
           <strong> Al hacer clic en Suscríbete, confirmas que estás de acuerdo con nuestros Términos y Condiciones.</strong>

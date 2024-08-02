@@ -5,7 +5,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			access_token: null,
 			errorMessage: null,
 			paymentMethods: []
-
 		},
 		actions: {
 			// Use getActions to call a function within a function
@@ -226,7 +225,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 
 					const data = await response.json();
-
 					if (response.ok) {
 						setStore({ paymentMethods: data });
 					} else {
@@ -235,7 +233,81 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.error('Error al obtener métodos de pago:', error);
 				}
-			}
+			},
+
+			createPaymentMethod: async (datos) => {
+				try {
+					const store = getStore();
+					const response = await fetch(process.env.BACKEND_URL + "/api/paymentMethod", {
+						method: 'POST',
+						body: JSON.stringify(datos),
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': `Bearer ${store.access_token}`
+						}
+					});
+
+					const data = await response.json();
+					if (response.ok) {
+						setStore({ paymentMethods: [...store.paymentMethods, data] });
+						return { status: 'success', message: 'Método de pago creado exitosamente' };
+					} else {
+						return { status: 'error', message: data.message };
+					}
+				} catch (error) {
+					console.error('Error al crear método de pago:', error);
+					return { status: 'error', message: 'Error al crear método de pago. Inténtalo de nuevo más tarde.' };
+				}
+			},
+
+			updatePaymentMethod: async (id, datos) => {
+				try {
+					const store = getStore();
+					const response = await fetch(`${process.env.BACKEND_URL}/api/paymentMethod/${id}`, {
+						method: 'PUT',
+						body: JSON.stringify(datos),
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': `Bearer ${store.access_token}`
+						}
+					});
+
+					const data = await response.json();
+					if (response.ok) {
+						setStore({ paymentMethods: store.paymentMethods.map(pm => pm.id === id ? data : pm) });
+						return { status: 'success', message: 'Método de pago actualizado exitosamente' };
+					} else {
+						return { status: 'error', message: data.message };
+					}
+				} catch (error) {
+					console.error('Error al actualizar método de pago:', error);
+					return { status: 'error', message: 'Error al actualizar método de pago. Inténtalo de nuevo más tarde.' };
+				}
+			},
+
+			deletePaymentMethod: async (id) => {
+				try {
+					const store = getStore();
+					const response = await fetch(`${process.env.BACKEND_URL}/api/paymentMethod/${id}`, {
+						method: 'DELETE',
+						headers: {
+							'Authorization': `Bearer ${store.access_token}`
+						}
+					});
+
+					if (response.ok) {
+						setStore({ paymentMethods: store.paymentMethods.filter(pm => pm.id !== id) });
+						return { status: 'success', message: 'Método de pago eliminado exitosamente' };
+					} else {
+						const data = await response.json();
+						return { status: 'error', message: data.message };
+					}
+				} catch (error) {
+					console.error('Error al eliminar método de pago:', error);
+					return { status: 'error', message: 'Error al eliminar método de pago. Inténtalo de nuevo más tarde.' };
+				}
+			},
+
 		},
 	};
 };
