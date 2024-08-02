@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext"; // Ajusta la ruta según tu configuración
 import imgLogin from "../../img/login.png";
 import "../../styles/login.css";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const { actions } = useContext(Context);
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [errors, setErrors] = useState({});
+	const navigate = useNavigate()
+
 
 	const validateForm = () => {
 		let formErrors = {};
 		let isValid = true;
 
 		// Validar el campo de email
-		if (!email) {
+		if (email === '') {
 			formErrors.email = "El campo de email es obligatorio";
 			isValid = false;
 		} else if (!/\S+@\S+\.\S+/.test(email)) {
@@ -21,7 +26,7 @@ export const Login = () => {
 		}
 
 		// Validar el campo de password
-		if (!password) {
+		if (password === '') {
 			formErrors.password = "El campo de contraseña es obligatorio";
 			isValid = false;
 		} else if (password.length < 6) {
@@ -33,11 +38,21 @@ export const Login = () => {
 		return isValid;
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (validateForm()) {
-			// Procesar el login
-			console.log("Formulario válido, procesando login...");
+			const loginData = { email, password };
+			const response = await actions.login(loginData);
+
+			if (response.status === 'success') {
+				console.log("Inicio de sesión exitoso");
+				setEmail('')
+				setPassword('')
+				// Redirigir o realizar otras acciones necesarias tras un login exitoso
+				navigate('/')
+			} else {
+				setErrors({ general: response.message });
+			}
 		}
 	};
 
@@ -49,8 +64,9 @@ export const Login = () => {
 					<form className="w-75" onSubmit={handleSubmit}>
 						<h3 className="text-center mb-4">Acceder</h3>
 						<p className="text-center mb-4">Bienvenido a nuestro portal para acceder a tu cuenta</p>
+						{errors.general && <div className="text-danger mb-3">{errors.general}</div>}
 						<div className="mb-3">
-							<label htmlFor="exampleInputEmail1" className="form-label">Correo Eléctronico</label>
+							<label htmlFor="exampleInputEmail1" className="form-label">Correo Electrónico</label>
 							<input
 								type="email"
 								className="form-control"
@@ -64,7 +80,7 @@ export const Login = () => {
 						</div>
 						<div className="mb-3">
 							<label htmlFor="exampleInputPassword1" className="form-label">
-								Contraseña <a className="text" href="/resetPassword">Olvidaste tu contraseña?</a>
+								Contraseña <a className="text" href="/resetPassword">¿Olvidaste tu contraseña?</a>
 							</label>
 							<input
 								type="password"

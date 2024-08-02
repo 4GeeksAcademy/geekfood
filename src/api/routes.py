@@ -260,4 +260,18 @@ def update_payment_by_id(payment_id):
     return jsonify(paymentMethod.serialize())
 
 
+# Eliminar metodo de pago por ID
+@api.route('/paymentMethod/<int:payment_id>', methods=['DELETE'])
+@jwt_required() # ruta privada
+def delete_paymentMethod_by_id(payment_id):
+    id = get_jwt_identity()
+    user = User.query.filter_by(id=id).first()
+    paymentMethod = PaymentMethod.query.filter_by(id=payment_id, user_id=user.id).first()
+    
+    if not paymentMethod:
+        return jsonify({"message": "Método de pago no encontrado"}), 404
+    
+    db.session.delete(paymentMethod)
+    db.session.commit()
+    return jsonify({"message": "Método de pago eliminado exitosamente"}), 200
 
