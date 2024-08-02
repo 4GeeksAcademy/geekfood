@@ -16,8 +16,8 @@ export const Navbar = ({ cart }) => {
     }, [store.currentUser]);
 
     return (
-        <nav className="navbar navbar-expand-lg">
-            <div className="container-fluid">
+        <div className="container">
+            <nav className="navbar navbar-expand-lg mb-0">
                 <a href="/"><img src={icon} alt="icon" className="navbar-icon" /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -28,17 +28,14 @@ export const Navbar = ({ cart }) => {
                             <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Nosotros</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Servicios</Link>
+                            <Link className="nav-link active" aria-current="page" to="/whyus">Nosotros</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/product_americano">Productos</Link>
                         </li>
 
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Contactanos</Link>
+                            <Link className="nav-link active" aria-current="page" to="/contact">Contactanos</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/faq">FAQ's</Link>
@@ -55,6 +52,7 @@ export const Navbar = ({ cart }) => {
 
                                         <ul className="dropdown-menu">
                                             <li><Link className="dropdown-item" to="/userProfile">Perfil</Link></li>
+                                            <li><hr className="dropdown-divider" /></li>
                                             <li><button className="dropdown-item" onClick={actions.logout}>Salir</button></li>
                                         </ul>
                                     </div>
@@ -78,7 +76,7 @@ export const Navbar = ({ cart }) => {
                         </Link>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav >
+        </div>
     );
 };

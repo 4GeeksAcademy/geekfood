@@ -1,10 +1,15 @@
-// src/front/js/component/paymentinstrument.js
-
-import React, { useState } from 'react';
+// paymentinstrument.js
+import React, { useState, useEffect, useContext } from 'react';
+import { Context } from '../store/appContext';
 import '../../styles/paymentinstrument.css';
 
 const PaymentInstrument = ({ onSubmit }) => {
+    const { store, actions } = useContext(Context);
     const [selectedPayment, setSelectedPayment] = useState("");
+
+    useEffect(() => {
+        actions.getAllPaymentMethods();
+    }, [actions]);
 
     const handleSelectPayment = (payment) => {
         setSelectedPayment(payment);
@@ -20,24 +25,19 @@ const PaymentInstrument = ({ onSubmit }) => {
             <form onSubmit={handleSubmit}>
                 <h3>Elige una forma de pago</h3>
                 <div className="payment-options">
-                    <did>
-                        <label>
-                            <input type="radio" name="payment" value="Visa Classic" onChange={() => handleSelectPayment("Visa Classic")} />
-                            Visa Classic **** 4242
-                        </label>
-                    </did>
-                    <div>
-                        <label>
-                            <input type="radio" name="payment" value="Mastercard" onChange={() => handleSelectPayment("Mastercard")} />
-                            Mastercard **** 2329
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input type="radio" name="payment" value="American Express" onChange={() => handleSelectPayment("American Express")} />
-                            American Express **** 2314
-                        </label>
-                    </div>
+                    {store.paymentMethods.map((method, index) => (
+                        <div key={index}>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value={method.card_name}
+                                    onChange={() => handleSelectPayment(method.card_name)}
+                                />
+                                {method.card_name} **** {method.card_number.slice(-4)}
+                            </label>
+                        </div>
+                    ))}
                 </div>
                 <button type="submit" className="btn btn-primary">Continuar</button>
             </form>

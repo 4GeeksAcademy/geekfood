@@ -36,7 +36,7 @@ import { DownloadApp } from "./component/downloadApp";
 import { Comentarios } from "./component/comments";
 
 
-import injectContext from "./store/appContext"; 
+import injectContext from "./store/appContext";
 
 
 const Layout = () => {
@@ -66,11 +66,10 @@ const Layout = () => {
                         <Route element={<ContactUs />} path="/contactUs" />
                         <Route element={<UserProfile />} path="/userProfile" />
                         <Route element={<NotFound />} path="*" />
-                        <Route element={<Suscription />} path="/suscription" />
                         <Route element={<DiscoverProducts />} path="/discoverProduct" />
-                        <Route element={<ResumeBuy cart={cart} updateCart={updateCart} removeFromCart={removeFromCart} />} path="/resumebuy" />   
-                        <Route element={<Checkout cart={cart} />} path="/checkout" />  
-                        <Route element={<Invoice />} path="/invoice" />             
+                        <Route element={<ResumeBuy cart={cart} updateCart={updateCart} removeFromCart={removeFromCart} />} path="/resumebuy" />
+                        <Route element={<Checkout cart={cart} />} path="/checkout" />
+                        <Route element={<Invoice />} path="/invoice" />
                         <Route path="/" element={<Home />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/resetPassword" element={<FPassword />} />
