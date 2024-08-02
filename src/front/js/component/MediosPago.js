@@ -1,31 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Context } from '../store/appContext';
 import '../../styles/MediosPago.css';
 
 const MediosPago = () => {
-  const [savedMethods, setSavedMethods] = useState([
-    { id: 1, type: 'Visa Classic', number: '•••• 4242' },
-    { id: 2, type: 'Mastercard', number: '•••• 2329' },
-    { id: 3, type: 'American Express', number: '•••• 2314' },
-  ]);
-
+  const { store, actions } = useContext(Context);
   const [newCardNumber, setNewCardNumber] = useState('');
   const [newNameOnCard, setNewNameOnCard] = useState('');
   const [newExpDate, setNewExpDate] = useState('');
   const [newCvv2, setNewCvv2] = useState('');
 
+  useEffect(() => {
+    actions.getAllPaymentMethods();
+  }, [actions]);
+
   const handleDeleteMethod = (id) => {
-    setSavedMethods(savedMethods.filter(method => method.id !== id));
+    actions.deletePaymentMethod(id);
   };
 
   const handleSaveNewMethod = () => {
     if (newCardNumber.length >= 4) {
       const lastFourDigits = newCardNumber.slice(-4);
       const newMethod = {
-        id: Date.now(),
-        type: 'Visa Classic',
-        number: `•••• ${lastFourDigits}`
+        card_name: newNameOnCard,
+        card_number: `•••• ${lastFourDigits}`,
+        exp_date: newExpDate,
+        cvv2: newCvv2
       };
-      setSavedMethods([...savedMethods, newMethod]);
+
+      actions.createPaymentMethod(newMethod);
 
       setNewCardNumber('');
       setNewNameOnCard('');
@@ -40,11 +42,11 @@ const MediosPago = () => {
     <div className="payment-methods">
       <h3>Medios de pagos agregados</h3>
       <div className="saved-methods">
-        {savedMethods.map(method => (
+        {store.paymentMethods.map(method => (
           <div key={method.id} className="saved-method">
             <i className="bi bi-credit-card"></i>
-            <span>{method.type}</span>
-            <span className="card-number">{method.number}</span>
+            <span>{method.card_name}</span>
+            <span className="card-number">{method.card_number}</span>
             <i
               className="bi bi-trash3 delete-icon"
               onClick={() => handleDeleteMethod(method.id)}
@@ -56,7 +58,7 @@ const MediosPago = () => {
       <div className="new-method">
         <h3>Agregar un nuevo medio de pago</h3>
         <div className="form-group">
-          <label htmlFor="cardNumber">Card number</label>
+          <label htmlFor="cardNumber">Número de tarjeta</label>
           <input
             type="text"
             id="cardNumber"
@@ -66,7 +68,7 @@ const MediosPago = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="nameOnCard">Name on card</label>
+          <label htmlFor="nameOnCard">Nombre en la tarjeta</label>
           <input
             type="text"
             id="nameOnCard"
@@ -76,17 +78,7 @@ const MediosPago = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="expDate">Exp Date</label>
-          <input
-            type="text"
-            id="expDate"
-            className="form-control"
-            value={newExpDate}
-            onChange={(e) => setNewExpDate(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="cvv2">CVV2</label>
+          <label htmlFor="cvv2">CVV</label>
           <input
             type="text"
             id="cvv2"
