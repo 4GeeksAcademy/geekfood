@@ -34,7 +34,7 @@ const ResumeBuy = ({ cart, updateCart, removeFromCart }) => {
                             <div className="quantity">
                                 <button onClick={() => handleQuantityChange(item.id, -1)} disabled={item.quantity <= 1}>-</button>
                                 <span>{item.quantity}</span>
-                                <button onClick={() => handleQuantityChange(item.id, 1)} disabled={item.quantity >= 3}>+</button>
+                                <button onClick={() => handleQuantityChange(item.id, 1)} disabled={item.quantity >= 10}>+</button>
                             </div>
                         </div>
                         <button className="remove-button" onClick={() => handleRemove(item.id)}>Eliminar productos</button>
@@ -43,9 +43,9 @@ const ResumeBuy = ({ cart, updateCart, removeFromCart }) => {
             </div>
 
             <div className="summary">
-                <h3>Resumen de la compra</h3>
+                <h2>Resumen de la compra</h2>
                 <p>Productos: ${totalPrice}</p>
-                <p>Total cargos: $3500</p>
+                <p>Total cargos envío: $3500</p>
                 <p>Total: ${totalPrice + 3500}</p>
                 <button className="btn btn-outline-secondary btn-sm continue-buying" onClick={handleContinue}>Continuar compra</button>
                 <Link className="btn btn-outline-secondary btn-sm continue-shopping" to="/product_americano">Seguir comprando</Link>

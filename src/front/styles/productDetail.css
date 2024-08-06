@@ -11,14 +11,20 @@
 
 .product-image-section {
     flex: 1;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    background-color: #ffffff; 
+    padding: 20px; 
+    border-radius: 8px; 
 }
 
 .main-image {
-    width: 50%;
-    height: auto;
-    margin-bottom: 10px;
-    align-items: flex-start;
+    max-width: 50%; 
+    height: auto; 
+    margin-bottom: 10px; 
 }
+
 
 .thumbnail-images img {
     width: 50px;
@@ -101,5 +107,6 @@
 .free-shipping {
     margin-top: 20px;
 }
+
 
 
