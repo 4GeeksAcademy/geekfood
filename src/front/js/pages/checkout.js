@@ -28,7 +28,7 @@ const Checkout = () => {
     };
 
     const handleOrder = () => {
-        setCart([]);
+        setCart([]); // Vacía el carrito
         navigate('/invoice', {
             state: {
                 cart: cart,
@@ -42,35 +42,38 @@ const Checkout = () => {
 
     return (
         <div className="checkout-container">
-            <h2>Detalle de entrega</h2>
-            <button className="btn btn-outline-secondary" onClick={() => setShowAddressModal(true)}>Agregar dirección</button>
-            <p>Dirección: {address || "Ingresar dirección"}</p>
-            <button className="btn btn-outline-secondary" onClick={() => setAddress("")}>Eliminar</button>
+            <div className="detalle-de-entrega">
+                <h2>Detalle de entrega</h2>
+                <div><button className="btn-agregar-direccion" onClick={() => setShowAddressModal(true)}>Agregar dirección</button>
+                <div></div><button className="btn-eliminar" onClick={() => setAddress("")}>Eliminar</button></div>
+                <p>Dirección: {address || "Ingresar dirección"}</p>
+                {showAddressModal && (
+                    <Address
+                        onSubmit={handleAddressSubmit}
+                        onClose={() => setShowAddressModal(false)}
+                    />
+                )}
+            </div>
 
-            {showAddressModal && (
-                <Address
-                    onSubmit={handleAddressSubmit}
-                    onClose={() => setShowAddressModal(false)}
-                />
-            )}
+            <div className="medios-de-pago">
+                <h2>Medios de pago</h2>
+                <button className="btn" onClick={() => setShowPaymentModal(true)}>Elegir medio de pago</button>
+                <p>{paymentMethod || "Seleccionar método de pago"}</p>
+                {showPaymentModal && (
+                    <PaymentInstrument
+                        onSubmit={handlePaymentSubmit}
+                        onClose={() => setShowPaymentModal(false)}
+                    />
+                )}
+            </div>
 
-            <h2>Medios de pago</h2>
-            <button className="btn btn-outline-secondary" onClick={() => setShowPaymentModal(true)}>Elegir medio de pago</button>
-            <p>{paymentMethod || "Seleccionar método de pago"}</p>
-
-            {showPaymentModal && (
-                <PaymentInstrument
-                    onSubmit={handlePaymentSubmit}
-                    onClose={() => setShowPaymentModal(false)}
-                />
-            )}
-
-            <div className="summary">
-                <h3>Resumen de la compra</h3>
+            <div className="summary-checkout">
+                <h2>Resumen de la compra</h2>
                 <p>Productos: ${totalPrice}</p>
-                <p>Total cargos: $3500</p>
+                <p>Total cargos envío: $3500</p>
                 <p>Total: ${totalPrice + 3500}</p>
-                <button className="btn btn-outline-secondary btn-sm continue-buying" onClick={handleOrder}>Pedir</button>
+                <div><button className="btn-summary-continuar-compra" onClick={handleOrder}>Continuar compra</button></div>
+                <div><button className="btn-summary-seguir-comprando">Seguir comprando</button></div>
             </div>
         </div>
     );

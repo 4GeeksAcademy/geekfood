@@ -76,8 +76,8 @@ const DiscoverProducts = () => {
                             <h4>{restaurant.name}</h4>
                             <p>{restaurant.category}</p>
                             <p>{restaurant.rating} ★</p>
-                            <p>{restaurant.deliveryTime} min</p>
-                            <p>${restaurant.price}</p>
+{/*                             <p>{restaurant.deliveryTime} min</p>
+                            <p>${restaurant.price}</p> */}
                         </div>
                         <button className="view-product-button" onClick={() => navigate(`/viewproducts/${restaurant.id}`)}>ver productos</button>
                     </div>
