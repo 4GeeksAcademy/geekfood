@@ -42,11 +42,13 @@ const MediosPago = () => {
     <div className="payment-methods">
       <h3>Medios de pagos agregados</h3>
       <div className="saved-methods">
+
         {store.paymentMethods.map(method => (
           <div key={method.id} className="saved-method">
             <i className="bi bi-credit-card"></i>
             <span>{method.card_name}</span>
             <span className="card-number">{method.card_number}</span>
+            <span className="card-number">{method.exp_date}</span>
             <i
               className="bi bi-trash3 delete-icon"
               onClick={() => handleDeleteMethod(method.id)}
@@ -77,6 +79,18 @@ const MediosPago = () => {
             onChange={(e) => setNewNameOnCard(e.target.value)}
           />
         </div>
+
+        <div className="form-group">
+          <label htmlFor="cvv2">Fecha Vencimiento</label>
+          <input
+            type="text"
+            id="cvv2"
+            className="form-control"
+            value={newExpDate}
+            onChange={(e) => setNewExpDate(e.target.value)}
+          />
+        </div>
+
         <div className="form-group">
           <label htmlFor="cvv2">CVV</label>
           <input

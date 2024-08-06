@@ -240,6 +240,8 @@ def create_paymentMethod():
         user_id=user.id,
         card_name=data['card_name'],
         card_number=data['card_number'],
+        exp_date=data['exp_date'],
+        cvv2=data['cvv2'],
     )
     
     db.session.add(new_paymentMethod)

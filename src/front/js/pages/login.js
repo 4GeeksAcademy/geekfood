@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Context } from "../store/appContext"; // Ajusta la ruta según tu configuración
+import { Context } from "../store/appContext";
 import imgLogin from "../../img/login.png";
 import "../../styles/login.css";
 import { useNavigate } from "react-router-dom";

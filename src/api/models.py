@@ -66,13 +66,15 @@ class Profile(db.Model):
         db.session.delete(self)
         db.session.commit() 
 
-#Metodos de pago (GET-POST-DELETE)
+#Metodos de pago
 class PaymentMethod(db.Model):
     __tablename__ = 'paymentMethods'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     card_name = db.Column(db.String(120), nullable=False)
     card_number = db.Column(db.String(120), unique=True, nullable=False)
+    exp_date = db.Column(db.String(120), nullable=True)
+    cvv2 = db.Column(db.String(120), nullable=False)
 
     def serialize(self):
         return {
@@ -80,6 +82,8 @@ class PaymentMethod(db.Model):
             "user_id": self.user_id,
             "card_name": self.card_name,
             "card_number": self.card_number,
+            "exp_date": self.exp_date,
+            "cvv2": self.cvv2,
         }
 
     def save(self):

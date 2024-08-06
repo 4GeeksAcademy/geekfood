@@ -25,7 +25,7 @@ export const Jumbotron = () => {
                         <div className="jumbotron2">
                             <p className="lead">Aquí encontrarás la mejor variedad de ofertas en nuestros restaurantes.</p>
                             <div className="d-flex justify-content-md-start justify-content-center">
-                                <Link className="btn btn-secondary btn-sm me-2" to="/registro">Registrate</Link>
+                                <Link className="btn btn-primary btn-sm me-2" to="/registro">Registrate</Link>
                                 <Link className="btn btn-secondary btn-sm" to="/login">Inicia Sesión</Link>
                             </div>
                         </div>

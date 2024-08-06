@@ -42,7 +42,7 @@ export const Newsletter = () => {
           <input type="email" placeholder="Ingresa tu correo" className="newsletter-inputt" />
         </div>
         <div className="">
-          <Link className="btn" to="/suscription">Suscríbete</Link>
+          <Link className="btn btn-primary" to="/suscription">Suscríbete</Link>
         </div>
         <p className="newsletter-terms">
           <strong> Al hacer clic en Suscríbete, confirmas que estás de acuerdo con nuestros Términos y Condiciones.</strong>
