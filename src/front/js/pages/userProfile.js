@@ -4,6 +4,7 @@ import MediosPago from '../component/MediosPago';
 import UltimasOrdenes from '../component/UltimasOrdenes';
 import Seguridad from '../component/Seguridad';
 import ResenasValoraciones from '../component/ResenasValoraciones';
+import Usuarios from '../component/users';  
 import '../../styles/userProfile.css';
 import perfil from '../../img/profilePhoto.jpg';
 
@@ -59,6 +60,8 @@ const UserProfile = () => {
         return <Seguridad />;
       case 'resenasValoraciones':
         return <ResenasValoraciones />;
+      case 'usuarios':  // Agrega el caso para el nuevo componente Usuarios
+        return <Usuarios />;
       default:
         return null;
     }
@@ -71,7 +74,7 @@ const UserProfile = () => {
           <div className="profile text-center">
             <img src={perfil} alt="Perfil" className="img-fluid rounded-circle" />
             <h4>Mi perfil</h4>
-            <p>{name}</p> { }
+            <p>{name}</p>
           </div>
           <a
             href="#"
@@ -107,6 +110,13 @@ const UserProfile = () => {
             onClick={() => setActiveTab('resenasValoraciones')}
           >
             Reseñas y valoraciones
+          </a>
+          <a
+            href="#"
+            className={`nav-link ${activeTab === 'usuarios' ? 'active' : ''}`}  // Nuevo enlace para Usuarios
+            onClick={() => setActiveTab('usuarios')}
+          >
+            Usuarios
           </a>
         </div>
       </nav>
