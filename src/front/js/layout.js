@@ -34,7 +34,7 @@ import { Product } from "./component/product";
 import { Whyus } from "./component/whyus";
 import { DownloadApp } from "./component/downloadApp";
 import { Comentarios } from "./component/comments";
-
+import { Chatbot } from './component/chatbot'; 
 
 import injectContext from "./store/appContext";
 
@@ -93,6 +93,7 @@ const Layout = () => {
                     <Footer />
                 </ScrollToTop>
             </BrowserRouter>
+            <Chatbot />
         </div>
     );
 };
