@@ -73,7 +73,7 @@ const Checkout = () => {
                 <p>Total cargos envío: $3500</p>
                 <p>Total: ${totalPrice + 3500}</p>
                 <div><button className="btn-summary-continuar-compra" onClick={handleOrder}>Continuar compra</button></div>
-                <div><button className="btn-summary-seguir-comprando">Seguir comprando</button></div>
+                {/* <div><button className="btn-summary-seguir-comprando">Seguir comprando</button></div> */}
             </div>
         </div>
     );
