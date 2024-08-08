@@ -42,7 +42,6 @@ const Seguridad = () => {
     if (!validate()) {
       return;
     }
-
     try {
       const response = await fetch(`${process.env.BACKEND_URL}/api/change-password`, {
         method: 'PUT',
