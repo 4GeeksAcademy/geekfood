@@ -1,71 +1,42 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState } from 'react';
+import StarRating from './starRating';
+import '../../styles/comments.css';
 
 export const Comentarios = () => {
     const [commentText, setCommentText] = useState("");
-    const [comentarios, setComentarios] = useState([]);
+    const [comentarios] = useState([
+        { id: 1, nombre: 'Maria Salazar', contenido: '¡Excelente servicio!', rating: 5 },
+        { id: 2, nombre: 'Daniel Guzmán', contenido: 'Muy buena aplicación.', rating: 4 },
+        { id: 3, nombre: 'Miguen Sanhueza', contenido: 'Me encantó la experiencia.', rating: 3 },
+        { id: 4, nombre: 'Carolina Mendez', contenido: 'Recomiendo totalmente.', rating: 4 },
+        { id: 5, nombre: 'Veronica Landaeta', contenido: 'Volvería a comprar aquí.', rating: 5 },
+    ]);
 
     const enviarComentario = () => {
-        fetch('/api/comentario', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ comentario: commentText })
-        })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error('Hubo un problema al enviar el comentario.');
-        })
-        .then(data => {
-            console.log(data); // 
-            cargarComentarios(); // Cargar los comentarios actualizados después de enviar uno nuevo
-            setCommentText(""); // Limpiar el área de texto después de enviar
-        })
-        .catch(error => console.error('Error:', error));
+        // Aquí normalmente iría la lógica para enviar el comentario al servidor
+        // Por ahora, no hacemos nada
+        setCommentText(""); // Limpiar el área de texto después de enviar
     };
 
     return (
-        <div className="row">
-            <div className="col-md-6">
-                <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title">Nuestras calificaciones</h5>
-                        <div className="row">
-                            <div className="col">
-                                {/* Contenido de la primera columna */}
-                                <p>Columna 1</p>
+        <div className="c-container w-100">
+            <div className="row justify-content-center">
+                <div className="col-md-8 cont">
+                    <h2 className="text-center">Nuestras calificaciones</h2>
+                    <p className="text-center mb-4">Acá puedes ver las calificaciones que nuestros clientes nos dejan.</p>
+                    <div className="row">
+                        {comentarios.map(comentario => (
+                            <div key={comentario.id} className="col-md-6 col-lg-4 mb-3">
+                                <div className="card p-3 h-100">
+                                    <StarRating rating={comentario.rating} />
+                                    <p className="mt-2 font-weight-bold">{comentario.nombre}</p>
+                                    <p>{comentario.contenido}</p>
+                                </div>
                             </div>
-                            <div className="col">
-                                {/* Contenido de la segunda columna */}
-                                <p>Columna 2</p>
-                            </div>
-                            <div className="col">
-                                {/* Contenido de la tercera columna */}
-                                <p>Columna 3</p>
-                            </div>
-                        </div>
+                        ))}
                     </div>
-                </div>
-            </div>
-            <div className="col-md-6">
-                <div>
-                    {/* Aquí puedes agregar el área de texto para el comentario */}
-                    <textarea
-                        id="commentText"
-                        placeholder="Escribe tu comentario aquí..."
-                        rows="4"
-                        cols="50"
-                        value={commentText}
-                        onChange={(e) => setCommentText(e.target.value)}
-                    />
-                    <br />
-                    <button onClick={enviarComentario} className="btn btn-primary mt-2">Enviar Comentario</button>
                 </div>
             </div>
         </div>
     );
-}
-
+};

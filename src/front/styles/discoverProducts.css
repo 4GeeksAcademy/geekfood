@@ -1,0 +1,88 @@
+.discover-products-container {
+  padding: 100px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.discover-products-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fd8d14;
+}
+
+.discover-products-content p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.product-features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px; /* Ajusta el espacio entre elementos */
+  padding: 20px 0;
+}
+
+.feature {
+  max-width: 160px; /* Ajusta para mayor tamaño de imagen */
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.feature img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 50%; /* Acá se hace la imagen circular */
+  border: 5px solid #ffffff; /* Borde blanco alrededor de la imagen */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efecto de elevación */
+}
+
+.feature:hover {
+  transform: scale(1.05);
+}
+
+.feature h4 {
+  font-size: 1.2rem; /* Ajustar para un texto más grande */
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feature p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.explore-button {
+  display: inline-block;
+  background-color: #fd8d14;
+  color: #ffffff;
+  border: none;
+  padding: 10px 30px; /* Ajustar para mayor tamaño de botón */
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 30px; /* Espacio superior al botón */
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.explore-button:hover {
+  background-color: #e65c00;
+}
+
+.download-enter {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.download-enter:hover {
+  background-color: #444444;
+}

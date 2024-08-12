@@ -1,0 +1,31 @@
+.usuarios-container {
+    font-family: "Nunito", serif;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.usuarios-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.results-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.reset-link {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.reset-link:hover {
+    text-decoration: none;
+}

@@ -1,0 +1,134 @@
+.discover-products-container {
+  padding: 50px 20px;
+  background-color: rgba(255, 255, 255, 0.564);
+  text-align: center;
+}
+
+.rounded-image {
+  border-radius: 50%;
+}
+
+.h4 {
+  color: black;
+  font-family: "Nunito", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.filter-options img {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+
+}
+
+.filter-options img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.clear-filter {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.restaurant-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.restaurant-card {
+  border: 1px solid #dddddd;
+  padding: 20px;
+  width: 200px;
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05);
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.restaurant-details h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.restaurant-details p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.clear-filter {
+  background-color: #fd8d14;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: "Nunito", serif;
+}
+
+.clear-filter:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.view-product-button {
+  background-color: #fd8d14;
+  color: #000000;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  font-family: "Nunito", serif;
+}
+
+.view-product-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  ;
+
+}

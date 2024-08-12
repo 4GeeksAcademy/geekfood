@@ -1,0 +1,27 @@
+.download-app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.download-app-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.download-app-image img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}

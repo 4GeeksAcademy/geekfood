@@ -1,0 +1,111 @@
+/* src/front/styles/checkout.css */
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 10px 0;
+}
+
+.detalle-de-entrega {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    margin: 10px;
+}
+
+.btn-agregar-direccion {
+    background-color: #fd8d14;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+    width: auto;
+}
+
+.btn-agregar-direccion:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-eliminar {
+    background-color: #fd8d14;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+    width: auto;
+}
+
+.btn-eliminar:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.medios-de-pago {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    margin: 10px;
+}
+
+.summary-checkout {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    margin: 10px;
+}
+
+.btn-summary-continuar-compra {
+    background-color: #fd8d14;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+    width: auto;
+}
+
+.btn-summary-continuar-compra:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-summary-seguir-comprando {
+    background-color: #fd8d14;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+    width: auto;
+}
+
+.btn-summary-seguir-comprando:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.summary h2 {
+    color: #ff6600;
+    margin-bottom: 20px;
+    font-family: "Rakkas", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fd8d14;
+}
